@@ -12,6 +12,7 @@ require('header.php');
     </div>
     <button type="submit">Connexion</button>
 </form>
+<p><?=$_SESSION['error']?></p>
 
 <?php
 require('footer.php');
