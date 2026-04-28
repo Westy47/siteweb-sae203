@@ -1,5 +1,5 @@
 <?php
-
+// Connextion à la BDD + verif de mdp
 function connexionOk($pseudo, $pw)
 {
     require('connect.php');
