@@ -1,5 +1,5 @@
 <?php
-
-unset($_SESSION);
+$_SESSION = [];
+session_unset();
 
 header('Location: accueil.php');
