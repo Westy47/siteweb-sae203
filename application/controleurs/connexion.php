@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Faute = erreur : autre tentative
     }else{
         $_POST = [];
-        $_SESSION['error'] = 'Le pseudo ou le login est incorect';
+        $_SESSION['error'] = 'Le nom d\'utilisateur ou le mot de passe est incorrect';
         header('Location:connexion.php');
         exit;
     }
