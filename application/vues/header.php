@@ -12,10 +12,16 @@
 
 <body>
     <header>
-          <!--A modifier plus tard -->
-        <div>
+        <div id="menu">
+        <?php if(isset($_SESSION['pseudo'])){ ?>
+            <a href="accueil.php">Accueil</a>
+            Connecté en tant que <?=$_SESSION['pseudo']?>
+            <a href="deconnexion.php">Se déconnecter</a>
+            <a href="postPhoto.php">Poster un photo</a>
+        <?php }else{ ?>
             <a href="accueil.php">Accueil</a>
             <a href="connexion.php">Se connecter</a>
             <a href="inscription.php">S'inscrire</a>
+        <?php } ?>
         </div>
     </header>
