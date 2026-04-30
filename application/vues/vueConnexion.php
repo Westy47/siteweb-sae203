@@ -11,8 +11,8 @@ require('header.php');
             <input type="text" name="login" id="login">
             <label for="pwd">Mot de passe</label>
             <input type="password" name="pwd" id="pwd">
+            <button type="submit">Connexion</button>
         </div>
-    <button type="submit">Connexion</button>
     </form>
 </div>
 <!-- Message d'erreur si le mdp est incorrect -->
