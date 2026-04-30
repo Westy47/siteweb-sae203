@@ -5,10 +5,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../public/css/connexion.css">
     <title>vueInscription</title>
 </head>
 <body>
+    <div class="main-content">
     <form action="../controleurs/inscription.php" method="post">
+        <div>
+            <h1>S'Inscrire</h1>
         <label for="login">Login:</label>
         <input type="text" name="login" id="login">
 
@@ -28,6 +32,8 @@
         </select>
 
         <button type="submit">Inscrire</button>
+        </div>
     </form>
+    </div>
 </body>
 </html>
