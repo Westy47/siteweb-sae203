@@ -23,3 +23,18 @@ function getCom() {
 
     return $results;
 }
+
+function addUser($login, $email, $pwd, $com) {
+    $dbh = connect();
+
+    $sql = "INSERT INTO users (alias, email, password, commune)
+            VALUES (:alias, :email, :pwd, :commune)";
+
+    $sth = $dbh->prepare($sql);
+    $sth->execute([
+        ':alias' => $login,
+        ':email' => $email,
+        ':pwd' => $pwd,
+        ':commune' => $com
+    ]);
+}
