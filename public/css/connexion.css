@@ -2,6 +2,7 @@ body {
     margin: 0;
     background-color: #081a2c;
     font-family: Arial, sans-serif;
+    background-image: url('../images/paper_5.png');
 }
 
 
@@ -10,10 +11,19 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: calc(100vh - 120px); /* ajuste si besoin */
-    position: relative; /* ajouté pour que .error en absolute se base sur ce conteneur */
+    height: calc(100vh - 120px); 
+    position: relative; 
 }
 
+.main-content form > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}   
+
+label {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
 
 form {
     background: #fff;
@@ -24,7 +34,7 @@ form {
 }
 
 input {
-    width: 100%;
+    width: 80%;
     margin-top: 5px;
     margin-bottom: 15px;
     padding: 8px;
@@ -32,7 +42,7 @@ input {
 
 
 button {
-    width: 100%;
+    width: 80%;
     padding: 10px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
