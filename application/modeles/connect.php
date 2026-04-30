@@ -1,7 +1,7 @@
 <?php
 function connect() {
     $userName = 'root';
-    $pw = 'root';
+    $pw = '';
     $dbName = 'sae203';
     
     try {
