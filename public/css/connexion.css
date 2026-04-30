@@ -1,0 +1,51 @@
+body {
+    margin: 0;
+    background-color: #081a2c;
+    font-family: Arial, sans-serif;
+}
+
+
+.main-content {
+    background-color: #eef1f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 120px); /* ajuste si besoin */
+    position: relative; /* ajouté pour que .error en absolute se base sur ce conteneur */
+}
+
+
+form {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    width: 320px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+input {
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    padding: 8px;
+}
+
+
+button {
+    width: 100%;
+    padding: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.error {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20px; /* ajuster selon besoin (ou top: 20px;) */
+    width: calc(100% - 40px);
+    max-width: 320px;
+    color: red;
+    text-align: center;
+    margin: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
