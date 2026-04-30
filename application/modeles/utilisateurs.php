@@ -12,3 +12,14 @@ function connexionOk($pseudo, $pw)
 
     return $pw === $result['password'];
 }
+
+function getCom() {
+    $dbh = connect();
+
+    $sql = "SELECT * FROM communes";
+    $sth = $dbh->prepare($sql);
+    $sth->execute();
+    $results = $sth->fetchAll(PDO::FETCH_ASSOC);  
+
+    return $results;
+}
