@@ -1,5 +1,6 @@
 <?php
-$_SESSION = [];
+session_start();
 session_unset();
 
 header('Location: accueil.php');
+exit;
