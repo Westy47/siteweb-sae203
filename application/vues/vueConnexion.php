@@ -1,7 +1,7 @@
 <?php
 require('header.php');
 ?>
-<link rel="stylesheet" href="../../public/css/connexion.css">
+<link rel="stylesheet" href="../../public/css/form.css">
 <!-- Création du formulaire -->
 <div class="main-content">
     <form action="../controleurs/connexion.php" method="post">
