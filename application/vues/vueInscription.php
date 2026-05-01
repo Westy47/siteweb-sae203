@@ -1,4 +1,4 @@
-<?php require('header.php'); ?>
+<?php require "header.php"; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -24,11 +24,11 @@
 
         <select name="commune" id="commune">
             <option value="">-- Choisir une commune --</option>
-            <?php
-            foreach(getCom() as $c):
-            ?>
-            <option value="<?=$c['code_insee']?>"><?=$c['nom_standard']?></option>
-            <?php endforeach ?>
+            <?php foreach (getCom() as $c): ?>
+            <option value="<?= $c["code_insee"] ?>"><?= $c[
+    "nom_standard"
+] ?></option>
+            <?php endforeach; ?>
         </select>
 
         <button type="submit">Inscrire</button>

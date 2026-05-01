@@ -2,5 +2,5 @@
 session_start();
 session_unset();
 
-header('Location: accueil.php');
-exit;
+header("Location: accueil.php");
+exit();

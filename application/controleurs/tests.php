@@ -1,6 +1,6 @@
 <?php
 // contrôleur présent uniquement pour réaliser des tests
-require('../modeles/connect.php');
+require "../modeles/connect.php";
 
 $dbh = connect();
 

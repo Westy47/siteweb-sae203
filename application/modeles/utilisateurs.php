@@ -2,29 +2,31 @@
 // Connextion à la BDD + verif de mdp
 function connexionOk($pseudo, $pw)
 {
-    require('connect.php');
+    require "connect.php";
     $dbh = connect();
 
     $sql = "SELECT password FROM users WHERE alias=:pseudo";
     $sth = $dbh->prepare($sql);
-    $sth->execute([':pseudo' => $pseudo]);
+    $sth->execute([":pseudo" => $pseudo]);
     $result = $sth->fetch(PDO::FETCH_ASSOC);
 
-    return $pw === $result['password'];
+    return $pw === $result["password"];
 }
 
-function getCom() {
+function getCom()
+{
     $dbh = connect();
 
     $sql = "SELECT * FROM communes";
     $sth = $dbh->prepare($sql);
     $sth->execute();
-    $results = $sth->fetchAll(PDO::FETCH_ASSOC);  
+    $results = $sth->fetchAll(PDO::FETCH_ASSOC);
 
     return $results;
 }
 
-function addUser($login, $email, $pwd, $com) {
+function addUser($login, $email, $pwd, $com)
+{
     $dbh = connect();
 
     $sql = "INSERT INTO users (alias, email, password, commune)
@@ -32,9 +34,9 @@ function addUser($login, $email, $pwd, $com) {
 
     $sth = $dbh->prepare($sql);
     $sth->execute([
-        ':alias' => $login,
-        ':email' => $email,
-        ':pwd' => $pwd,
-        ':commune' => $com
+        ":alias" => $login,
+        ":email" => $email,
+        ":pwd" => $pwd,
+        ":commune" => $com,
     ]);
 }

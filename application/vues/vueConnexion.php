@@ -1,6 +1,5 @@
 <?php
-require('header.php');
-?>
+require "header.php"; ?>
 <link rel="stylesheet" href="../../public/css/form.css">
 <!-- Création du formulaire -->
 <div class="main-content">
@@ -16,11 +15,9 @@ require('header.php');
     </form>
 </div>
 <!-- Message d'erreur si le mdp est incorrect -->
-<?php if(isset($_SESSION['error'])): ?>
-<p class="error"><?=$_SESSION['error']?></p>
-<?php unset($_SESSION['error']);
-endif ?>
+<?php if (isset($_SESSION["error"])): ?>
+<p class="error"><?= $_SESSION["error"] ?></p>
+<?php unset($_SESSION["error"]);endif; ?>
 
-<?php
-require('footer.php');
+<?php require "footer.php";
 ?>
