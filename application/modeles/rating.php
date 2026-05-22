@@ -1,0 +1,55 @@
+<?php
+
+function importRating($photoId, $userId, $grade)
+{
+    $dbh = connect();
+    $sql = "INSERT INTO votes (photo_id, user_id, grade)
+            VALUES (:photo_id, :user_id, :grade)
+            ON DUPLICATE KEY UPDATE grade = VALUES(grade);";
+
+    $sth = $dbh->prepare($sql);
+    $sth->execute([
+        ":photo_id" => $photoId,
+        ":user_id" => $userId,
+        ":grade" => $grade,
+    ]);
+}
+
+function selectUserRating()
+{
+    // Connexion à la base de données
+    $dbh = connect(); // avant la fonction, il faut avoir fait un require pour pouvoir utiliser la fonction connect
+
+    // Requête SQL pour obtenir les photos, triées par date
+    $sql = "SELECT * FROM votes WHERE user_id=:userId ";
+
+    // Préparation et exécution de la requête
+    $sth = $dbh->prepare($sql);
+    $sth->execute([
+        ":userId" => $_SESSION["userId"],
+    ]);
+
+    // Récupération des résultats sous forme de tableau associatif
+    $results = $sth->fetchAll(PDO::FETCH_ASSOC);
+
+    // Retourner les résultats
+    return $results;
+}
+function selectAllRatings($id)
+{
+    // Connexion à la base de données
+    $dbh = connect(); // avant la fonction, il faut avoir fait un require pour pouvoir utiliser la fonction connect
+
+    // Requête SQL pour obtenir les photos, triées par date
+    $sql = "SELECT AVG(grade) AS moyenne FROM votes WHERE photo_id=:photo_id";
+
+    // Préparation et exécution de la requête
+    $sth = $dbh->prepare($sql);
+    $sth->execute([":photo_id" => $id]);
+
+    // Récupération des résultats sous forme de tableau associatif
+    $results = $sth->fetch(PDO::FETCH_ASSOC);
+
+    // Retourner les résultats
+    return $results;
+}

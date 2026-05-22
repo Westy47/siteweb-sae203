@@ -7,15 +7,24 @@
 
 <div class="page">
 
-<?php $i = 0; ?>
-<?php foreach ($listePhotos as $src): $i++; ?>
+<?php foreach ($listePhotos as $key => $src):
+
+    $i = $src["id"];
+    $r = $userRatings[$key]["grade"];
+
+    // on récupère la moyenne de chaque image
+    $m = selectAllRatings($src["id"]);
+    $m = $m["moyenne"]; // On récupère juste la valeur 
+
+    // var_dump($m);
+    ?>
       <div class="carte">
       <div class="cadre">
-        <img src="../../<?= $src["file_path"]?>" alt="">
+        <img src="../../<?= $src["file_path"] ?>" alt="">
       </div>
         <div class="legend">
             
-                <?php if (isset($_SESSION['pseudo'])) { ?>
+                <?php if (isset($_SESSION["pseudo"])) { ?>
                   <form action="../controleurs/note.php" method="get" class="rating-form">
                 <input type="hidden" name="photo_id" value="<?= $i ?>">
                   <div class="stars" aria-label="Notation">
@@ -36,15 +45,16 @@
                 </div>
                 <button type="submit" class="rating-submit">Valider</button>
             </form>
+            <?php if ($r): ?>
+            <p>Votre note précedente était: <?= $r ?>🌟 </p>
+            <p>La note moyenne de cette image est: <?= $m ?>🌟</p>
+            <?php endif; ?> 
 
                 <?php } ?>
-                
-
-                
-            
         </div>
       </div>
-<?php endforeach; ?>
+<?php
+endforeach; ?>
 </div>
 <div id="parent">
       <button class="close-btn"></button>

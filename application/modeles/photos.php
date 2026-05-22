@@ -8,7 +8,7 @@ function obtenirPhotos()
     $dbh = connect(); // avant la fonction, il faut avoir fait un require pour pouvoir utiliser la fonction connect
 
     // Requête SQL pour obtenir les photos, triées par date
-    $sql = "SELECT file_path FROM photos ORDER BY upload_date";
+    $sql = "SELECT * FROM photos ORDER BY upload_date";
 
     // Préparation et exécution de la requête
     $sth = $dbh->prepare($sql);

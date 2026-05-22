@@ -4,3 +4,5 @@ package-lock.json
 .vscode
 .prettierrc
 .DS_Store
+. prettierrc
+.claude

@@ -24,7 +24,7 @@
 
         <select name="commune" id="commune">
             <option value="">-- Choisir une commune --</option>
-            <?php foreach (getCom() as $c): ?>
+            <?php foreach (getCom()['communes'] as $c): ?>
             <option value="<?= $c["code_insee"] ?>"><?= $c[
     "nom_standard"
 ] ?></option>

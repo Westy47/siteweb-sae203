@@ -20,7 +20,7 @@
         <textarea name="desc" id="desc" cols="10" ></textarea>
 
         <label class="file">
-            <input type="file" id="file" aria-label="File browser example">
+            <input type="file" id="file" aria-label="File browser example" name="img" >
             <span class="file-custom"></span>
         </label>
 

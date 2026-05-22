@@ -9,8 +9,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $pwd = $_POST["pwd"];
 
     // On redirige l'user vers l'accueil en enregistrant son pseudo
-    if (connexionOk($login, $pwd)) {
+    $userId = connexionOk($login, $pwd);
+    if ($userId !== false) {
         $_SESSION["pseudo"] = $login;
+        $_SESSION["userId"] = $userId;
         header("Location:../../index.php");
         exit();
         // Faute = erreur : autre tentative

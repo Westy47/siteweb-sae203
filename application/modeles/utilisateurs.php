@@ -5,12 +5,15 @@ function connexionOk($pseudo, $pw)
     require "connect.php";
     $dbh = connect();
 
-    $sql = "SELECT password FROM users WHERE alias=:pseudo";
+    $sql = "SELECT * FROM users WHERE alias=:pseudo";
     $sth = $dbh->prepare($sql);
     $sth->execute([":pseudo" => $pseudo]);
     $result = $sth->fetch(PDO::FETCH_ASSOC);
 
-    return $pw === $result["password"];
+    if ($result && $pw === $result["password"]) {
+        return $result["id"];
+    }
+    return false;
 }
 
 function getCom()
@@ -22,7 +25,7 @@ function getCom()
     $sth->execute();
     $results = $sth->fetchAll(PDO::FETCH_ASSOC);
 
-    return $results;
+    return ['communes' => $results, 'total' => count($results)];
 }
 
 function addUser($login, $email, $pwd, $com)
