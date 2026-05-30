@@ -14,7 +14,9 @@
 
     // on récupère la moyenne de chaque image
     $m = selectAllRatings($src["id"]);
-    $m = $m["moyenne"]; // On récupère juste la valeur 
+    $m = $m["moyenne"];
+
+    // On récupère juste la valeur
 
     // var_dump($m);
     ?>
@@ -24,7 +26,10 @@
       </div>
         <div class="legend">
             
-                <?php if (isset($_SESSION["pseudo"])) { ?>
+                <?php if (
+                    isset($_SESSION["pseudo"]) and
+                    $_SESSION["userId"] !== $src["author_id"]
+                ) { ?>
                   <form action="../controleurs/note.php" method="get" class="rating-form">
                 <input type="hidden" name="photo_id" value="<?= $i ?>">
                   <div class="stars" aria-label="Notation">
@@ -60,6 +65,7 @@ endforeach; ?>
       <button class="close-btn"></button>
       <img src="https://placehold.co/600x400" alt="placeholder" id="bigPic">
 </div>
+<?php require "../controleurs/photosParAuteur.php" ?>
 <?php require "footer.php"; ?>
 
 <script src="../../public/js/bigPic.js"></script>
