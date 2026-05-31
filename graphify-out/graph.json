@@ -1,0 +1,1901 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {
+    "hyperedges": [
+      {
+        "id": "mvc_request_flow_accueil",
+        "label": "Home Page MVC Request Flow",
+        "nodes": [
+          "controleurs_accueil",
+          "modeles_photos",
+          "modeles_rating",
+          "vues_vueaccueil"
+        ],
+        "relation": "participate_in",
+        "confidence": "EXTRACTED",
+        "confidence_score": 1.0,
+        "source_file": "CLAUDE.md"
+      },
+      {
+        "id": "rating_submission_flow",
+        "label": "Rating Submission Flow (View \u2192 Controller \u2192 Model \u2192 DB)",
+        "nodes": [
+          "vues_vueaccueil",
+          "controleurs_note",
+          "modeles_rating_importrating",
+          "db_table_votes"
+        ],
+        "relation": "participate_in",
+        "confidence": "EXTRACTED",
+        "confidence_score": 1.0,
+        "source_file": "application/controleurs/note.php"
+      },
+      {
+        "id": "chart_data_flow",
+        "label": "Photos-per-Author Chart Data Pipeline",
+        "nodes": [
+          "controleurs_photosparauteur",
+          "controleurs_photosparauteur_getphotosparauteur",
+          "vues_vuephotosparauteur",
+          "concept_chartjs_cdn"
+        ],
+        "relation": "participate_in",
+        "confidence": "EXTRACTED",
+        "confidence_score": 1.0,
+        "source_file": "application/controleurs/photosParAuteur.php"
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "label": "index.php",
+      "file_type": "code",
+      "source_file": "index.php",
+      "source_location": "L1",
+      "id": "index_php",
+      "community": 13,
+      "norm_label": "index.php"
+    },
+    {
+      "label": "package.json",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L1",
+      "id": "package_json",
+      "community": 8,
+      "norm_label": "package.json"
+    },
+    {
+      "label": "devDependencies",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L2",
+      "id": "siteweb_sae203_package_devdependencies",
+      "community": 8,
+      "norm_label": "devdependencies"
+    },
+    {
+      "label": "@prettier/plugin-php",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L3",
+      "id": "siteweb_sae203_package_devdependencies_prettier_plugin_php",
+      "community": 8,
+      "norm_label": "@prettier/plugin-php"
+    },
+    {
+      "label": "prettier",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L4",
+      "id": "siteweb_sae203_package_devdependencies_prettier",
+      "community": 8,
+      "norm_label": "prettier"
+    },
+    {
+      "label": "bigPic.js",
+      "file_type": "code",
+      "source_file": "public/js/bigPic.js",
+      "source_location": "L1",
+      "id": "public_js_bigpic_js",
+      "community": 7,
+      "norm_label": "bigpic.js"
+    },
+    {
+      "label": "bigPic",
+      "file_type": "code",
+      "source_file": "public/js/bigPic.js",
+      "source_location": "L1",
+      "id": "js_bigpic_bigpic",
+      "community": 7,
+      "norm_label": "bigpic"
+    },
+    {
+      "label": "bigPicParent",
+      "file_type": "code",
+      "source_file": "public/js/bigPic.js",
+      "source_location": "L2",
+      "id": "js_bigpic_bigpicparent",
+      "community": 7,
+      "norm_label": "bigpicparent"
+    },
+    {
+      "label": "images",
+      "file_type": "code",
+      "source_file": "public/js/bigPic.js",
+      "source_location": "L4",
+      "id": "js_bigpic_images",
+      "community": 7,
+      "norm_label": "images"
+    },
+    {
+      "label": "vueAccueil.php",
+      "file_type": "code",
+      "source_file": "application/vues/vueAccueil.php",
+      "source_location": "L1",
+      "id": "application_vues_vueaccueil_php",
+      "community": 14,
+      "norm_label": "vueaccueil.php"
+    },
+    {
+      "label": "vuePhotosParAuteur.php",
+      "file_type": "code",
+      "source_file": "application/vues/vuePhotosParAuteur.php",
+      "source_location": "L1",
+      "id": "application_vues_vuephotosparauteur_php",
+      "community": 15,
+      "norm_label": "vuephotosparauteur.php"
+    },
+    {
+      "label": "vueConnexion.php",
+      "file_type": "code",
+      "source_file": "application/vues/vueConnexion.php",
+      "source_location": "L1",
+      "id": "application_vues_vueconnexion_php",
+      "community": 16,
+      "norm_label": "vueconnexion.php"
+    },
+    {
+      "label": "header.php",
+      "file_type": "code",
+      "source_file": "application/vues/header.php",
+      "source_location": "L1",
+      "id": "application_vues_header_php",
+      "community": 17,
+      "norm_label": "header.php"
+    },
+    {
+      "label": "vueInscription.php",
+      "file_type": "code",
+      "source_file": "application/vues/vueInscription.php",
+      "source_location": "L1",
+      "id": "application_vues_vueinscription_php",
+      "community": 18,
+      "norm_label": "vueinscription.php"
+    },
+    {
+      "label": "footer.php",
+      "file_type": "code",
+      "source_file": "application/vues/footer.php",
+      "source_location": "L1",
+      "id": "application_vues_footer_php",
+      "community": 19,
+      "norm_label": "footer.php"
+    },
+    {
+      "label": "vuePostPhoto.php",
+      "file_type": "code",
+      "source_file": "application/vues/vuePostPhoto.php",
+      "source_location": "L1",
+      "id": "application_vues_vuepostphoto_php",
+      "community": 20,
+      "norm_label": "vuepostphoto.php"
+    },
+    {
+      "label": "utilisateurs.php",
+      "file_type": "code",
+      "source_file": "application/modeles/utilisateurs.php",
+      "source_location": "L1",
+      "id": "application_modeles_utilisateurs_php",
+      "community": 6,
+      "norm_label": "utilisateurs.php"
+    },
+    {
+      "label": "connexionOk()",
+      "file_type": "code",
+      "source_file": "application/modeles/utilisateurs.php",
+      "source_location": "L3",
+      "id": "modeles_utilisateurs_connexionok",
+      "community": 6,
+      "norm_label": "connexionok()"
+    },
+    {
+      "label": "getCom()",
+      "file_type": "code",
+      "source_file": "application/modeles/utilisateurs.php",
+      "source_location": "L19",
+      "id": "modeles_utilisateurs_getcom",
+      "community": 6,
+      "norm_label": "getcom()"
+    },
+    {
+      "label": "addUser()",
+      "file_type": "code",
+      "source_file": "application/modeles/utilisateurs.php",
+      "source_location": "L31",
+      "id": "modeles_utilisateurs_adduser",
+      "community": 6,
+      "norm_label": "adduser()"
+    },
+    {
+      "label": "post.php",
+      "file_type": "code",
+      "source_file": "application/modeles/post.php",
+      "source_location": "L1",
+      "id": "application_modeles_post_php",
+      "community": 1,
+      "norm_label": "post.php"
+    },
+    {
+      "label": "importPhoto()",
+      "file_type": "code",
+      "source_file": "application/modeles/post.php",
+      "source_location": "L2",
+      "id": "modeles_post_importphoto",
+      "community": 1,
+      "norm_label": "importphoto()"
+    },
+    {
+      "label": "photos.php",
+      "file_type": "code",
+      "source_file": "application/modeles/photos.php",
+      "source_location": "L1",
+      "id": "application_modeles_photos_php",
+      "community": 1,
+      "norm_label": "photos.php"
+    },
+    {
+      "label": "obtenirPhotos()",
+      "file_type": "code",
+      "source_file": "application/modeles/photos.php",
+      "source_location": "L5",
+      "id": "modeles_photos_obtenirphotos",
+      "community": 1,
+      "norm_label": "obtenirphotos()"
+    },
+    {
+      "label": "rating.php",
+      "file_type": "code",
+      "source_file": "application/modeles/rating.php",
+      "source_location": "L1",
+      "id": "application_modeles_rating_php",
+      "community": 4,
+      "norm_label": "rating.php"
+    },
+    {
+      "label": "importRating()",
+      "file_type": "code",
+      "source_file": "application/modeles/rating.php",
+      "source_location": "L3",
+      "id": "modeles_rating_importrating",
+      "community": 4,
+      "norm_label": "importrating()"
+    },
+    {
+      "label": "selectUserRating()",
+      "file_type": "code",
+      "source_file": "application/modeles/rating.php",
+      "source_location": "L18",
+      "id": "modeles_rating_selectuserrating",
+      "community": 4,
+      "norm_label": "selectuserrating()"
+    },
+    {
+      "label": "selectAllRatings()",
+      "file_type": "code",
+      "source_file": "application/modeles/rating.php",
+      "source_location": "L31",
+      "id": "modeles_rating_selectallratings",
+      "community": 4,
+      "norm_label": "selectallratings()"
+    },
+    {
+      "label": "note.php",
+      "file_type": "code",
+      "source_file": "application/controleurs/note.php",
+      "source_location": "L1",
+      "id": "application_controleurs_note_php",
+      "community": 21,
+      "norm_label": "note.php"
+    },
+    {
+      "label": "connexion.php",
+      "file_type": "code",
+      "source_file": "application/controleurs/connexion.php",
+      "source_location": "L1",
+      "id": "application_controleurs_connexion_php",
+      "community": 22,
+      "norm_label": "connexion.php"
+    },
+    {
+      "label": "accueil.php",
+      "file_type": "code",
+      "source_file": "application/controleurs/accueil.php",
+      "source_location": "L1",
+      "id": "application_controleurs_accueil_php",
+      "community": 23,
+      "norm_label": "accueil.php"
+    },
+    {
+      "label": "tests.php",
+      "file_type": "code",
+      "source_file": "application/controleurs/tests.php",
+      "source_location": "L1",
+      "id": "application_controleurs_tests_php",
+      "community": 24,
+      "norm_label": "tests.php"
+    },
+    {
+      "label": "postPhoto.php",
+      "file_type": "code",
+      "source_file": "application/controleurs/postPhoto.php",
+      "source_location": "L1",
+      "id": "application_controleurs_postphoto_php",
+      "community": 25,
+      "norm_label": "postphoto.php"
+    },
+    {
+      "label": "deconnexion.php",
+      "file_type": "code",
+      "source_file": "application/controleurs/deconnexion.php",
+      "source_location": "L1",
+      "id": "application_controleurs_deconnexion_php",
+      "community": 26,
+      "norm_label": "deconnexion.php"
+    },
+    {
+      "label": "photosParAuteur.php",
+      "file_type": "code",
+      "source_file": "application/controleurs/photosParAuteur.php",
+      "source_location": "L1",
+      "id": "application_controleurs_photosparauteur_php",
+      "community": 1,
+      "norm_label": "photosparauteur.php"
+    },
+    {
+      "label": "getPhotosParAuteur()",
+      "file_type": "code",
+      "source_file": "application/controleurs/photosParAuteur.php",
+      "source_location": "L4",
+      "id": "controleurs_photosparauteur_getphotosparauteur",
+      "community": 1,
+      "norm_label": "getphotosparauteur()"
+    },
+    {
+      "label": "inscription.php",
+      "file_type": "code",
+      "source_file": "application/controleurs/inscription.php",
+      "source_location": "L1",
+      "id": "application_controleurs_inscription_php",
+      "community": 27,
+      "norm_label": "inscription.php"
+    },
+    {
+      "label": "index.php (Entry Point)",
+      "file_type": "code",
+      "source_file": "index.php",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "index_index",
+      "community": 3,
+      "norm_label": "index.php (entry point)"
+    },
+    {
+      "label": "package.json (Dev Dependencies)",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "package_packagejson",
+      "community": 28,
+      "norm_label": "package.json (dev dependencies)"
+    },
+    {
+      "label": "database.sql (Schema & Seed Data)",
+      "file_type": "document",
+      "source_file": "database.sql",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "database_sql",
+      "community": 29,
+      "norm_label": "database.sql (schema & seed data)"
+    },
+    {
+      "label": "bigPic.js (Lightbox Script)",
+      "file_type": "code",
+      "source_file": "public/js/bigPic.js",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "js_bigpic",
+      "community": 2,
+      "norm_label": "bigpic.js (lightbox script)"
+    },
+    {
+      "label": "vueAccueil.php (Home View)",
+      "file_type": "code",
+      "source_file": "application/vues/vueAccueil.php",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "vues_vueaccueil",
+      "community": 2,
+      "norm_label": "vueaccueil.php (home view)"
+    },
+    {
+      "label": "vuePhotosParAuteur.php (Chart View)",
+      "file_type": "code",
+      "source_file": "application/vues/vuePhotosParAuteur.php",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "vues_vuephotosparauteur",
+      "community": 2,
+      "norm_label": "vuephotosparauteur.php (chart view)"
+    },
+    {
+      "label": "vueConnexion.php (Login View)",
+      "file_type": "code",
+      "source_file": "application/vues/vueConnexion.php",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "vues_vueconnexion",
+      "community": 0,
+      "norm_label": "vueconnexion.php (login view)"
+    },
+    {
+      "label": "header.php (Shared Header)",
+      "file_type": "code",
+      "source_file": "application/vues/header.php",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "vues_header",
+      "community": 0,
+      "norm_label": "header.php (shared header)"
+    },
+    {
+      "label": "vueInscription.php (Registration View)",
+      "file_type": "code",
+      "source_file": "application/vues/vueInscription.php",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "vues_vueinscription",
+      "community": 0,
+      "norm_label": "vueinscription.php (registration view)"
+    },
+    {
+      "label": "footer.php (Shared Footer)",
+      "file_type": "code",
+      "source_file": "application/vues/footer.php",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "vues_footer",
+      "community": 2,
+      "norm_label": "footer.php (shared footer)"
+    },
+    {
+      "label": "vuePostPhoto.php (Upload Photo View)",
+      "file_type": "code",
+      "source_file": "application/vues/vuePostPhoto.php",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "vues_vuepostphoto",
+      "community": 0,
+      "norm_label": "vuepostphoto.php (upload photo view)"
+    },
+    {
+      "label": "utilisateurs.php (User Model)",
+      "file_type": "code",
+      "source_file": "application/modeles/utilisateurs.php",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "modeles_utilisateurs",
+      "community": 0,
+      "norm_label": "utilisateurs.php (user model)"
+    },
+    {
+      "label": "post.php (Photo Upload Model)",
+      "file_type": "code",
+      "source_file": "application/modeles/post.php",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "modeles_post",
+      "community": 1,
+      "norm_label": "post.php (photo upload model)"
+    },
+    {
+      "label": "photos.php (Photos Model)",
+      "file_type": "code",
+      "source_file": "application/modeles/photos.php",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "modeles_photos",
+      "community": 3,
+      "norm_label": "photos.php (photos model)"
+    },
+    {
+      "label": "rating.php (Rating Model)",
+      "file_type": "code",
+      "source_file": "application/modeles/rating.php",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "modeles_rating",
+      "community": 3,
+      "norm_label": "rating.php (rating model)"
+    },
+    {
+      "label": "note.php (Rating Controller)",
+      "file_type": "code",
+      "source_file": "application/controleurs/note.php",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "controleurs_note",
+      "community": 3,
+      "norm_label": "note.php (rating controller)"
+    },
+    {
+      "label": "connexion.php (Login Controller)",
+      "file_type": "code",
+      "source_file": "application/controleurs/connexion.php",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "controleurs_connexion",
+      "community": 0,
+      "norm_label": "connexion.php (login controller)"
+    },
+    {
+      "label": "accueil.php (Home Controller)",
+      "file_type": "code",
+      "source_file": "application/controleurs/accueil.php",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "controleurs_accueil",
+      "community": 3,
+      "norm_label": "accueil.php (home controller)"
+    },
+    {
+      "label": "tests.php (DB Connection Test)",
+      "file_type": "code",
+      "source_file": "application/controleurs/tests.php",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "controleurs_tests",
+      "community": 30,
+      "norm_label": "tests.php (db connection test)"
+    },
+    {
+      "label": "postPhoto.php (Photo Upload Controller)",
+      "file_type": "code",
+      "source_file": "application/controleurs/postPhoto.php",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "controleurs_postphoto",
+      "community": 1,
+      "norm_label": "postphoto.php (photo upload controller)"
+    },
+    {
+      "label": "deconnexion.php (Logout Controller)",
+      "file_type": "code",
+      "source_file": "application/controleurs/deconnexion.php",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "controleurs_deconnexion",
+      "community": 0,
+      "norm_label": "deconnexion.php (logout controller)"
+    },
+    {
+      "label": "photosParAuteur.php (Chart Controller)",
+      "file_type": "code",
+      "source_file": "application/controleurs/photosParAuteur.php",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "controleurs_photosparauteur",
+      "community": 2,
+      "norm_label": "photosparauteur.php (chart controller)"
+    },
+    {
+      "label": "inscription.php (Registration Controller)",
+      "file_type": "code",
+      "source_file": "application/controleurs/inscription.php",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "controleurs_inscription",
+      "community": 0,
+      "norm_label": "inscription.php (registration controller)"
+    },
+    {
+      "label": "CLAUDE.md (Project Documentation)",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "claude_md",
+      "community": 3,
+      "norm_label": "claude.md (project documentation)"
+    },
+    {
+      "label": "Plain PHP MVC Pattern",
+      "file_type": "rationale",
+      "source_file": "CLAUDE.md",
+      "source_location": "40",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "concept_mvc_pattern",
+      "community": 3,
+      "norm_label": "plain php mvc pattern"
+    },
+    {
+      "label": "Session-based Authentication",
+      "file_type": "concept",
+      "source_file": "CLAUDE.md",
+      "source_location": "62",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "concept_session_auth",
+      "community": 0,
+      "norm_label": "session-based authentication"
+    },
+    {
+      "label": "ON DUPLICATE KEY UPDATE for Upsert Voting",
+      "file_type": "rationale",
+      "source_file": "CLAUDE.md",
+      "source_location": "70",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "concept_upsert_rating",
+      "community": 4,
+      "norm_label": "on duplicate key update for upsert voting"
+    },
+    {
+      "label": "Author Cannot Vote Own Photo (View-enforced)",
+      "file_type": "rationale",
+      "source_file": "CLAUDE.md",
+      "source_location": "70",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "concept_author_vote_restriction",
+      "community": 2,
+      "norm_label": "author cannot vote own photo (view-enforced)"
+    },
+    {
+      "label": "Controller Embedded in View Pattern",
+      "file_type": "rationale",
+      "source_file": "CLAUDE.md",
+      "source_location": "58",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "concept_embedded_controller",
+      "community": 2,
+      "norm_label": "controller embedded in view pattern"
+    },
+    {
+      "label": "Chart.js from CDN for Bar Chart",
+      "file_type": "concept",
+      "source_file": "application/vues/vuePhotosParAuteur.php",
+      "source_location": "31",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "concept_chartjs_cdn",
+      "community": 2,
+      "norm_label": "chart.js from cdn for bar chart"
+    },
+    {
+      "label": "DB Table: users",
+      "file_type": "concept",
+      "source_file": "database.sql",
+      "source_location": "77",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "db_table_users",
+      "community": 6,
+      "norm_label": "db table: users"
+    },
+    {
+      "label": "DB Table: photos",
+      "file_type": "concept",
+      "source_file": "database.sql",
+      "source_location": "47",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "db_table_photos",
+      "community": 1,
+      "norm_label": "db table: photos"
+    },
+    {
+      "label": "DB Table: votes",
+      "file_type": "concept",
+      "source_file": "database.sql",
+      "source_location": "104",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "db_table_votes",
+      "community": 4,
+      "norm_label": "db table: votes"
+    },
+    {
+      "label": "DB Table: communes",
+      "file_type": "concept",
+      "source_file": "database.sql",
+      "source_location": "22",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "db_table_communes",
+      "community": 6,
+      "norm_label": "db table: communes"
+    },
+    {
+      "label": "Crumpled White Paper Texture (paper_5)",
+      "file_type": "image",
+      "source_file": "public/media/ASSET/paper_5.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "asset_paper_5_main",
+      "community": 11,
+      "norm_label": "crumpled white paper texture (paper_5)"
+    },
+    {
+      "label": "Wrinkled Paper Background Texture",
+      "file_type": "concept",
+      "source_file": "public/media/ASSET/paper_5.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "asset_paper_5_texture",
+      "community": 11,
+      "norm_label": "wrinkled paper background texture"
+    },
+    {
+      "label": "John - Meme Photo (John Pork Calling Screen)",
+      "file_type": "image",
+      "source_file": "public/media/images/John.jpg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": "John",
+      "contributor": null,
+      "id": "images_john_photo",
+      "community": 5,
+      "norm_label": "john - meme photo (john pork calling screen)"
+    },
+    {
+      "label": "Apple Still Life - Dark Background",
+      "file_type": "image",
+      "source_file": "public/media/images/p_pomme.jpg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "images_p_pomme_photo",
+      "community": 5,
+      "norm_label": "apple still life - dark background"
+    },
+    {
+      "label": "Aline - Fantasy Scene with Blue Butterflies and Mushrooms",
+      "file_type": "image",
+      "source_file": "public/media/images/aline_fantasy.jpg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": "aline",
+      "contributor": null,
+      "id": "images_aline_fantasy_photo",
+      "community": 5,
+      "norm_label": "aline - fantasy scene with blue butterflies and mushrooms"
+    },
+    {
+      "label": "Aline - Dramatic Mountain Lake with Lightning",
+      "file_type": "image",
+      "source_file": "public/media/images/aline_nature.jpg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": "aline",
+      "contributor": null,
+      "id": "images_aline_nature_photo",
+      "community": 5,
+      "norm_label": "aline - dramatic mountain lake with lightning"
+    },
+    {
+      "label": "Jean - Larmes (Tears) - Vintage Black and White Portrait",
+      "file_type": "image",
+      "source_file": "public/media/images/jean_Larmes.jpg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": "jean",
+      "contributor": null,
+      "id": "images_jean_larmes_photo",
+      "community": 10,
+      "norm_label": "jean - larmes (tears) - vintage black and white portrait"
+    },
+    {
+      "label": "Jean - Fleurs (Flowers) - Sunny Spring Meadow",
+      "file_type": "image",
+      "source_file": "public/media/images/jean_fleurs.jpg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": "jean",
+      "contributor": null,
+      "id": "images_jean_fleurs_photo",
+      "community": 10,
+      "norm_label": "jean - fleurs (flowers) - sunny spring meadow"
+    },
+    {
+      "label": "User: John",
+      "file_type": "concept",
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "concept_user_john",
+      "community": 5,
+      "norm_label": "user: john"
+    },
+    {
+      "label": "User: Aline",
+      "file_type": "concept",
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "concept_user_aline",
+      "community": 5,
+      "norm_label": "user: aline"
+    },
+    {
+      "label": "User: Jean",
+      "file_type": "concept",
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "concept_user_jean",
+      "community": 10,
+      "norm_label": "user: jean"
+    },
+    {
+      "label": "Jacques Route - Autumn Forest Path",
+      "file_type": "image",
+      "source_file": "public/media/images/jacques_route.jpg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": "jacques",
+      "contributor": null,
+      "description": "Landscape photography of a winding dirt road through an autumn forest. Warm orange, red, and yellow foliage on both sides, soft misty light in the background. Serene, painterly mood with rich fall colors.",
+      "id": "images_jacques_route_photo",
+      "community": 9,
+      "norm_label": "jacques route - autumn forest path"
+    },
+    {
+      "label": "Adelouve Renard Cute - Sleeping Fox",
+      "file_type": "image",
+      "source_file": "public/media/images/Adelouve_Renard_cute.jpg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": "adelouve",
+      "contributor": null,
+      "description": "Wildlife close-up photography of a young red fox curled up asleep on a rocky surface. Soft green bokeh background with foliage. Warm orange fur, peaceful and endearing mood.",
+      "id": "images_adelouve_renard_cute_photo",
+      "community": 9,
+      "norm_label": "adelouve renard cute - sleeping fox"
+    },
+    {
+      "label": "Aline Chouette - Owl Close-Up",
+      "file_type": "image",
+      "source_file": "public/media/images/aline_chouette.jpg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": "aline",
+      "contributor": null,
+      "description": "Dramatic close-up portrait of a great horned owl face against a near-black background. Striking orange-red eyes, detailed feather texture. Dark, intense, and mysterious mood.",
+      "id": "images_aline_chouette_photo",
+      "community": 9,
+      "norm_label": "aline chouette - owl close-up"
+    },
+    {
+      "label": "Pochettes - Colorful Book Covers Still Life",
+      "file_type": "image",
+      "source_file": "public/media/images/pochettes.jpg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "description": "Still life photograph of colorful folder-like book covers (pink, yellow, light blue, green) fanned out, with a copy of Bertrand Russell's 'Histoire de la Philosophie Occidentale' (Les Belles Lettres edition) placed on top. Clean, flat-lay style with neutral background.",
+      "id": "images_pochettes_photo",
+      "community": 12,
+      "norm_label": "pochettes - colorful book covers still life"
+    },
+    {
+      "label": "Goat - Male Portrait",
+      "file_type": "image",
+      "source_file": "public/media/images/Goat.jpg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": "goat",
+      "contributor": null,
+      "description": "Head-and-shoulders portrait photograph of a middle-aged man with short dark hair, slight stubble, wearing a dark jacket. Neutral light background. Casual, ID-style or profile photo mood.",
+      "id": "images_goat_photo",
+      "community": 12,
+      "norm_label": "goat - male portrait"
+    }
+  ],
+  "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "package_json",
+      "target": "siteweb_sae203_package_devdependencies",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "siteweb_sae203_package_devdependencies",
+      "target": "siteweb_sae203_package_devdependencies_prettier",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "siteweb_sae203_package_devdependencies",
+      "target": "siteweb_sae203_package_devdependencies_prettier_plugin_php",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "public/js/bigPic.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "public_js_bigpic_js",
+      "target": "js_bigpic_bigpic",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "public/js/bigPic.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "public_js_bigpic_js",
+      "target": "js_bigpic_bigpicparent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "public/js/bigPic.js",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "public_js_bigpic_js",
+      "target": "js_bigpic_images",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "application/modeles/utilisateurs.php",
+      "source_location": "L31",
+      "weight": 1.0,
+      "source": "application_modeles_utilisateurs_php",
+      "target": "modeles_utilisateurs_adduser",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "application/modeles/utilisateurs.php",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "application_modeles_utilisateurs_php",
+      "target": "modeles_utilisateurs_connexionok",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "application/modeles/utilisateurs.php",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "application_modeles_utilisateurs_php",
+      "target": "modeles_utilisateurs_getcom",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "application/controleurs/connexion.php",
+      "source_location": "12",
+      "weight": 1.0,
+      "source": "controleurs_connexion",
+      "target": "modeles_utilisateurs_connexionok"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "application/modeles/utilisateurs.php",
+      "source_location": "8",
+      "weight": 1.0,
+      "source": "modeles_utilisateurs_connexionok",
+      "target": "db_table_users"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "application/modeles/utilisateurs.php",
+      "source_location": "22",
+      "weight": 1.0,
+      "source": "modeles_utilisateurs_getcom",
+      "target": "db_table_communes"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "application/vues/vueInscription.php",
+      "source_location": "27",
+      "weight": 1.0,
+      "source": "vues_vueinscription",
+      "target": "modeles_utilisateurs_getcom"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "application/controleurs/inscription.php",
+      "source_location": "7",
+      "weight": 1.0,
+      "source": "controleurs_inscription",
+      "target": "modeles_utilisateurs_adduser"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "application/modeles/utilisateurs.php",
+      "source_location": "35",
+      "weight": 1.0,
+      "source": "modeles_utilisateurs_adduser",
+      "target": "db_table_users"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "application/modeles/post.php",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "application_modeles_post_php",
+      "target": "modeles_post_importphoto",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "application/controleurs/postPhoto.php",
+      "source_location": "16",
+      "weight": 1.0,
+      "source": "controleurs_postphoto",
+      "target": "modeles_post_importphoto"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "application/modeles/post.php",
+      "source_location": "8",
+      "weight": 1.0,
+      "source": "modeles_post_importphoto",
+      "target": "db_table_photos"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "application/modeles/photos.php",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "application_modeles_photos_php",
+      "target": "modeles_photos_obtenirphotos",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "application/controleurs/accueil.php",
+      "source_location": "9",
+      "weight": 1.0,
+      "source": "controleurs_accueil",
+      "target": "modeles_photos_obtenirphotos"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "application/modeles/photos.php",
+      "source_location": "11",
+      "weight": 1.0,
+      "source": "modeles_photos_obtenirphotos",
+      "target": "db_table_photos"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "application/modeles/rating.php",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "application_modeles_rating_php",
+      "target": "modeles_rating_importrating",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "application/modeles/rating.php",
+      "source_location": "L31",
+      "weight": 1.0,
+      "source": "application_modeles_rating_php",
+      "target": "modeles_rating_selectallratings",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "application/modeles/rating.php",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "application_modeles_rating_php",
+      "target": "modeles_rating_selectuserrating",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "application/controleurs/note.php",
+      "source_location": "14",
+      "weight": 1.0,
+      "source": "controleurs_note",
+      "target": "modeles_rating_importrating"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "application/modeles/rating.php",
+      "source_location": "8",
+      "weight": 1.0,
+      "source": "modeles_rating_importrating",
+      "target": "concept_upsert_rating"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "application/modeles/rating.php",
+      "source_location": "6",
+      "weight": 1.0,
+      "source": "modeles_rating_importrating",
+      "target": "db_table_votes"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "application/controleurs/accueil.php",
+      "source_location": "11",
+      "weight": 1.0,
+      "source": "controleurs_accueil",
+      "target": "modeles_rating_selectuserrating"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "application/modeles/rating.php",
+      "source_location": "20",
+      "weight": 1.0,
+      "source": "modeles_rating_selectuserrating",
+      "target": "db_table_votes"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "application/modeles/rating.php",
+      "source_location": "36",
+      "weight": 1.0,
+      "source": "modeles_rating_selectallratings",
+      "target": "db_table_votes"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "application/vues/vueAccueil.php",
+      "source_location": "16",
+      "weight": 1.0,
+      "source": "vues_vueaccueil",
+      "target": "modeles_rating_selectallratings"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "application/controleurs/photosParAuteur.php",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "application_controleurs_photosparauteur_php",
+      "target": "controleurs_photosparauteur_getphotosparauteur",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "application/controleurs/photosParAuteur.php",
+      "source_location": "18",
+      "weight": 1.0,
+      "source": "controleurs_photosparauteur",
+      "target": "controleurs_photosparauteur_getphotosparauteur"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "application/controleurs/photosParAuteur.php",
+      "source_location": "8",
+      "weight": 1.0,
+      "source": "controleurs_photosparauteur_getphotosparauteur",
+      "target": "db_table_photos"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "application/controleurs/photosParAuteur.php",
+      "source_location": "8",
+      "weight": 1.0,
+      "source": "controleurs_photosparauteur_getphotosparauteur",
+      "target": "db_table_users"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "index.php",
+      "source_location": "2",
+      "weight": 1.0,
+      "source": "index_index",
+      "target": "controleurs_accueil"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "application/vues/vueAccueil.php",
+      "source_location": "88",
+      "weight": 1.0,
+      "source": "vues_vueaccueil",
+      "target": "js_bigpic"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "application/controleurs/accueil.php",
+      "source_location": "13",
+      "weight": 1.0,
+      "source": "controleurs_accueil",
+      "target": "vues_vueaccueil"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "application/vues/vueAccueil.php",
+      "source_location": "29",
+      "weight": 1.0,
+      "source": "vues_vueaccueil",
+      "target": "concept_author_vote_restriction"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "application/vues/vueAccueil.php",
+      "source_location": "85",
+      "weight": 1.0,
+      "source": "vues_vueaccueil",
+      "target": "controleurs_photosparauteur"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "application/vues/vueAccueil.php",
+      "source_location": "86",
+      "weight": 1.0,
+      "source": "vues_vueaccueil",
+      "target": "vues_footer"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "application/vues/vueAccueil.php",
+      "source_location": "1",
+      "weight": 1.0,
+      "source": "vues_vueaccueil",
+      "target": "vues_header"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "application/controleurs/photosParAuteur.php",
+      "source_location": "22",
+      "weight": 1.0,
+      "source": "controleurs_photosparauteur",
+      "target": "vues_vuephotosparauteur"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "application/vues/vuePhotosParAuteur.php",
+      "source_location": "31",
+      "weight": 1.0,
+      "source": "vues_vuephotosparauteur",
+      "target": "concept_chartjs_cdn"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "application/controleurs/connexion.php",
+      "source_location": "28",
+      "weight": 1.0,
+      "source": "controleurs_connexion",
+      "target": "vues_vueconnexion"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "application/vues/vueConnexion.php",
+      "source_location": "22",
+      "weight": 1.0,
+      "source": "vues_vueconnexion",
+      "target": "vues_footer"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "application/vues/vueConnexion.php",
+      "source_location": "2",
+      "weight": 1.0,
+      "source": "vues_vueconnexion",
+      "target": "vues_header"
+    },
+    {
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.55,
+      "source_file": "application/vues/vueConnexion.php",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "vues_vueconnexion",
+      "target": "vues_vueconnexion"
+    },
+    {
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "application/vues/vueConnexion.php",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "vues_vueconnexion",
+      "target": "vues_vueinscription"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "application/vues/header.php",
+      "source_location": "18",
+      "weight": 1.0,
+      "source": "concept_session_auth",
+      "target": "vues_header"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "application/vues/vueInscription.php",
+      "source_location": "1",
+      "weight": 1.0,
+      "source": "vues_vueinscription",
+      "target": "vues_header"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "application/vues/vuePostPhoto.php",
+      "source_location": "1",
+      "weight": 1.0,
+      "source": "vues_vuepostphoto",
+      "target": "vues_header"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "application/controleurs/inscription.php",
+      "source_location": "12",
+      "weight": 1.0,
+      "source": "controleurs_inscription",
+      "target": "vues_vueinscription"
+    },
+    {
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "application/vues/vueInscription.php",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "vues_vueinscription",
+      "target": "vues_vuepostphoto"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "application/controleurs/postPhoto.php",
+      "source_location": "27",
+      "weight": 1.0,
+      "source": "controleurs_postphoto",
+      "target": "vues_vuepostphoto"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "application/controleurs/connexion.php",
+      "source_location": "6",
+      "weight": 1.0,
+      "source": "controleurs_connexion",
+      "target": "modeles_utilisateurs"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "application/controleurs/inscription.php",
+      "source_location": "3",
+      "weight": 1.0,
+      "source": "controleurs_inscription",
+      "target": "modeles_utilisateurs"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "application/controleurs/postPhoto.php",
+      "source_location": "6",
+      "weight": 1.0,
+      "source": "controleurs_postphoto",
+      "target": "modeles_post"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "application/controleurs/accueil.php",
+      "source_location": "5",
+      "weight": 1.0,
+      "source": "controleurs_accueil",
+      "target": "modeles_photos"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "application/controleurs/accueil.php",
+      "source_location": "6",
+      "weight": 1.0,
+      "source": "controleurs_accueil",
+      "target": "modeles_rating"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "application/controleurs/note.php",
+      "source_location": "8",
+      "weight": 1.0,
+      "source": "controleurs_note",
+      "target": "modeles_rating"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "CLAUDE.md",
+      "source_location": "62",
+      "weight": 1.0,
+      "source": "concept_session_auth",
+      "target": "controleurs_connexion"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "CLAUDE.md",
+      "source_location": "40",
+      "weight": 1.0,
+      "source": "concept_mvc_pattern",
+      "target": "controleurs_accueil"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "application/controleurs/deconnexion.php",
+      "source_location": "3",
+      "weight": 1.0,
+      "source": "controleurs_deconnexion",
+      "target": "concept_session_auth"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": "58",
+      "weight": 1.0,
+      "source": "concept_embedded_controller",
+      "target": "controleurs_photosparauteur"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": "40",
+      "weight": 1.0,
+      "source": "claude_md",
+      "target": "concept_mvc_pattern"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "application/modeles/rating.php",
+      "source_location": "6",
+      "weight": 1.0,
+      "source": "concept_upsert_rating",
+      "target": "db_table_votes"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "database.sql",
+      "source_location": "59",
+      "weight": 1.0,
+      "source": "db_table_photos",
+      "target": "db_table_users"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "database.sql",
+      "source_location": "114",
+      "weight": 1.0,
+      "source": "db_table_votes",
+      "target": "db_table_users"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "database.sql",
+      "source_location": "113",
+      "weight": 1.0,
+      "source": "db_table_votes",
+      "target": "db_table_photos"
+    },
+    {
+      "from": "asset_paper_5_main",
+      "to": "asset_paper_5_texture",
+      "relation": "USED_FOR",
+      "provenance": "INFERRED",
+      "confidence_score": 0.85,
+      "notes": "Paper texture assets in an ASSET folder are typically used as UI background or overlay elements for visual styling",
+      "source": "asset_paper_5_main",
+      "target": "asset_paper_5_texture"
+    },
+    {
+      "label": "uploaded",
+      "type": "INFERRED",
+      "confidence_score": 0.85,
+      "rationale": "Filename prefix 'John' matches the user naming convention used throughout the app (author_title pattern)",
+      "source": "concept_user_john",
+      "target": "images_john_photo"
+    },
+    {
+      "label": "stored_in_same_directory",
+      "type": "EXTRACTED",
+      "confidence_score": 1.0,
+      "rationale": "Both files reside in public/media/images/",
+      "source": "images_john_photo",
+      "target": "images_aline_fantasy_photo"
+    },
+    {
+      "label": "stored_in_same_directory",
+      "type": "EXTRACTED",
+      "confidence_score": 1.0,
+      "rationale": "Both files reside in public/media/images/",
+      "source": "images_john_photo",
+      "target": "images_p_pomme_photo"
+    },
+    {
+      "label": "uploaded",
+      "type": "INFERRED",
+      "confidence_score": 0.95,
+      "rationale": "Filename prefix 'aline' directly maps to user alias per app naming convention",
+      "source": "concept_user_aline",
+      "target": "images_aline_fantasy_photo"
+    },
+    {
+      "label": "same_author",
+      "type": "INFERRED",
+      "confidence_score": 0.95,
+      "rationale": "Both filenames share the 'aline_' prefix indicating same uploader",
+      "source": "images_aline_fantasy_photo",
+      "target": "images_aline_nature_photo"
+    },
+    {
+      "label": "uploaded",
+      "type": "INFERRED",
+      "confidence_score": 0.95,
+      "rationale": "Filename prefix 'aline' directly maps to user alias per app naming convention",
+      "source": "concept_user_aline",
+      "target": "images_aline_nature_photo"
+    },
+    {
+      "label": "uploaded",
+      "type": "INFERRED",
+      "confidence_score": 0.95,
+      "rationale": "Filename prefix 'jean' directly maps to user alias per app naming convention",
+      "source": "concept_user_jean",
+      "target": "images_jean_larmes_photo"
+    },
+    {
+      "label": "same_author",
+      "type": "INFERRED",
+      "confidence_score": 0.95,
+      "rationale": "Both filenames share the 'jean_' prefix indicating same uploader",
+      "source": "images_jean_larmes_photo",
+      "target": "images_jean_fleurs_photo"
+    },
+    {
+      "label": "uploaded",
+      "type": "INFERRED",
+      "confidence_score": 0.95,
+      "rationale": "Filename prefix 'jean' directly maps to user alias per app naming convention",
+      "source": "concept_user_jean",
+      "target": "images_jean_fleurs_photo"
+    },
+    {
+      "relation": "shares_category",
+      "provenance": "INFERRED",
+      "confidence_score": 0.75,
+      "note": "Both are nature/outdoor photography uploads in the same photo-sharing app",
+      "source": "images_jacques_route_photo",
+      "target": "images_adelouve_renard_cute_photo"
+    },
+    {
+      "relation": "shares_category",
+      "provenance": "INFERRED",
+      "confidence_score": 0.65,
+      "note": "Both are nature-focused photography uploads",
+      "source": "images_jacques_route_photo",
+      "target": "images_aline_chouette_photo"
+    },
+    {
+      "relation": "shares_category",
+      "provenance": "INFERRED",
+      "confidence_score": 0.85,
+      "note": "Both are wildlife animal photography uploads",
+      "source": "images_adelouve_renard_cute_photo",
+      "target": "images_aline_chouette_photo"
+    },
+    {
+      "relation": "uploaded_alongside",
+      "provenance": "INFERRED",
+      "confidence_score": 0.55,
+      "note": "Both are user-uploaded photos in the same application media directory",
+      "source": "images_goat_photo",
+      "target": "images_pochettes_photo"
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "mvc_request_flow_accueil",
+      "label": "Home Page MVC Request Flow",
+      "nodes": [
+        "controleurs_accueil",
+        "modeles_photos",
+        "modeles_rating",
+        "vues_vueaccueil"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md"
+    },
+    {
+      "id": "rating_submission_flow",
+      "label": "Rating Submission Flow (View \u2192 Controller \u2192 Model \u2192 DB)",
+      "nodes": [
+        "vues_vueaccueil",
+        "controleurs_note",
+        "modeles_rating_importrating",
+        "db_table_votes"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "application/controleurs/note.php"
+    },
+    {
+      "id": "chart_data_flow",
+      "label": "Photos-per-Author Chart Data Pipeline",
+      "nodes": [
+        "controleurs_photosparauteur",
+        "controleurs_photosparauteur_getphotosparauteur",
+        "vues_vuephotosparauteur",
+        "concept_chartjs_cdn"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "application/controleurs/photosParAuteur.php"
+    }
+  ],
+  "built_at_commit": "9674d2f96fa612f8e159c70ee52002051a554f4e"
+}

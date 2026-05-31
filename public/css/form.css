@@ -92,7 +92,7 @@ textarea {
   left: 0;
   z-index: 5;
   height: 2.5rem;
-  padding: 0.5rem 1rem;
+  padding: 0.2rem 1rem;
   line-height: 1.5;
   color: #555;
   background-color: #fff;
@@ -114,9 +114,9 @@ textarea {
   bottom: -0.075rem;
   z-index: 6;
   display: block;
-  content: "Browse";
+  content: "Parcourir";
   height: 2.5rem;
-  padding: 0.5rem 1rem;
+  padding: 0.2rem 1rem;
   line-height: 1.5;
   color: #555;
   background-color: #eee;
@@ -127,4 +127,27 @@ textarea {
 /* Focus */
 .file input:focus ~ .file-custom {
   box-shadow: 0 0 0 0.075rem #fff, 0 0 0 0.2rem #0074d9;
+}
+
+button{
+  margin-top: 20px;
+}
+
+form.was-validated input:invalid {
+  animation: shake 0.2s ease-in-out 0s 2;
+    box-shadow: 0 0 4px red;
+}
+@keyframes shake {
+  0% {
+    margin-left: 0rem;
+  }
+  25% {
+    margin-left: 0.5rem;
+  }
+  75% {
+    margin-left: -0.5rem;
+  }
+  100% {
+    margin-left: 0rem;
+  }
 }

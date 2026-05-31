@@ -17,23 +17,16 @@ function importRating($photoId, $userId, $grade)
 
 function selectUserRating()
 {
-    // Connexion à la base de données
-    $dbh = connect(); // avant la fonction, il faut avoir fait un require pour pouvoir utiliser la fonction connect
-
-    // Requête SQL pour obtenir les photos, triées par date
-    $sql = "SELECT * FROM votes WHERE user_id=:userId ";
-
-    // Préparation et exécution de la requête
+    $dbh = connect();
+    $sql = "SELECT photo_id, grade FROM votes WHERE user_id=:userId";
     $sth = $dbh->prepare($sql);
-    $sth->execute([
-        ":userId" => $_SESSION["userId"],
-    ]);
-
-    // Récupération des résultats sous forme de tableau associatif
+    $sth->execute([":userId" => $_SESSION["userId"]]);
     $results = $sth->fetchAll(PDO::FETCH_ASSOC);
-
-    // Retourner les résultats
-    return $results;
+    $keyed = [];
+    foreach ($results as $row) {
+        $keyed[$row["photo_id"]] = $row["grade"];
+    }
+    return $keyed;
 }
 function selectAllRatings($id)
 {

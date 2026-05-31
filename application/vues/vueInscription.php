@@ -10,17 +10,17 @@
 </head>
 <body>
     <div class="main-content">
-    <form action="../controleurs/inscription.php" method="post">
+    <form action="../controleurs/inscription.php" method="post" novalidate>
         <div>
             <h1>S'Inscrire</h1>
         <label for="login">Login:</label>
-        <input type="text" name="login" id="login">
+        <input type="text" name="login" id="login" required>
 
         <label for="email">Email:</label>
-        <input type="email" name="email" id="email">
+        <input type="email" name="email" id="email" required>
 
         <label for="pwd">Mot de passe:</label>
-        <input type="password" name="pwd" id="pwd">
+        <input type="password" name="pwd" id="pwd" required>
 
         <select name="commune" id="commune">
             <option value="">-- Choisir une commune --</option>
@@ -36,4 +36,14 @@
     </form>
     </div>
 </body>
+<script>
+document.querySelector('form').addEventListener('submit', function (e) {
+    this.classList.remove('was-validated');
+    void this.offsetWidth;
+    this.classList.add('was-validated');
+    if (!this.checkValidity()) {
+        e.preventDefault();
+    }
+});
+</script>
 </html>

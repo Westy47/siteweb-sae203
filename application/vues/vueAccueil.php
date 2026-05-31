@@ -10,7 +10,7 @@
 <?php foreach ($listePhotos as $key => $src):
 
     $i = $src["id"];
-    $r = $userRatings[$key]["grade"];
+    $r = $userRatings[$src["id"]] ?? null;
 
     // on récupère la moyenne de chaque image
     $m = selectAllRatings($src["id"]);
@@ -33,29 +33,46 @@
                   <form action="../controleurs/note.php" method="get" class="rating-form">
                 <input type="hidden" name="photo_id" value="<?= $i ?>">
                   <div class="stars" aria-label="Notation">
-                    <input type="radio" id="star5-<?= $i ?>" name="rating" value="5">
+                    <input type="radio" id="star5-<?= $i ?>" name="rating" value="5" <?= $r ==
+5
+    ? "checked"
+    : "" ?>>
                     <label for="star5-<?= $i ?>" title="5 étoiles">★</label>
 
-                    <input type="radio" id="star4-<?= $i ?>" name="rating" value="4">
+                    <input type="radio" id="star4-<?= $i ?>" name="rating" value="4" <?= $r ==
+4
+    ? "checked"
+    : "" ?>>
                     <label for="star4-<?= $i ?>" title="4 étoiles">★</label>
 
-                    <input type="radio" id="star3-<?= $i ?>" name="rating" value="3">
+                    <input type="radio" id="star3-<?= $i ?>" name="rating" value="3" <?= $r ==
+3
+    ? "checked"
+    : "" ?>>
                     <label for="star3-<?= $i ?>" title="3 étoiles">★</label>
 
-                    <input type="radio" id="star2-<?= $i ?>" name="rating" value="2">
+                    <input type="radio" id="star2-<?= $i ?>" name="rating" value="2" <?= $r ==
+2
+    ? "checked"
+    : "" ?>>
                     <label for="star2-<?= $i ?>" title="2 étoiles">★</label>
 
-                    <input type="radio" id="star1-<?= $i ?>" name="rating" value="1">
+                    <input type="radio" id="star1-<?= $i ?>" name="rating" value="1" <?= $r ==
+1
+    ? "checked"
+    : "" ?>>
                     <label for="star1-<?= $i ?>" title="1 étoile">★</label>
                 </div>
                 <button type="submit" class="rating-submit">Valider</button>
             </form>
             <?php if ($r): ?>
-            <p>Votre note précedente était: <?= $r ?>🌟 </p>
+            <!-- <p>Votre note précedente était: <?= $r ?>🌟 </p> -->
             <p>La note moyenne de cette image est: <?= $m ?>🌟</p>
             <?php endif; ?> 
 
-                <?php } ?>
+                <?php } else { ?> 
+                <p><a href="./connexion.php">Connectez-vous</a>pour accéder aux notes</p>
+              <?php } ?>
         </div>
       </div>
 <?php
@@ -65,7 +82,7 @@ endforeach; ?>
       <button class="close-btn"></button>
       <img src="https://placehold.co/600x400" alt="placeholder" id="bigPic">
 </div>
-<?php require "../controleurs/photosParAuteur.php" ?>
+<?php require "../controleurs/photosParAuteur.php"; ?>
 <?php require "footer.php"; ?>
 
 <script src="../../public/js/bigPic.js"></script>
