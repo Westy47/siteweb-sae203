@@ -54,10 +54,11 @@ CREATE TABLE `photos` (
   `file_path` varchar(128) NOT NULL,
   `upload_date` datetime NOT NULL,
   `title` varchar(128) NOT NULL,
+  `moyenne` decimal(3,2) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_photos_author` (`author_id`),
   CONSTRAINT `fk_photos_author` FOREIGN KEY (`author_id`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -66,7 +67,7 @@ CREATE TABLE `photos` (
 
 LOCK TABLES `photos` WRITE;
 /*!40000 ALTER TABLE `photos` DISABLE KEYS */;
-INSERT INTO `photos` VALUES (1,1,'Beautiful','public/media/images/aline_nature.jpg','2023-05-23 09:26:07','nature'),(2,1,'Superbe','public/media/images/aline_fantasy.jpg','2023-05-23 09:27:01','fantasy'),(3,1,'Chouette!','public/media/images/aline_chouette.jpg','2023-05-23 09:28:37','chouette'),(4,4,'Que de fleurs','public/media/images/jean_fleurs.jpg','2023-05-27 15:51:33','fleurs'),(5,3,'Une route','public/media/images/jacques_route.jpg','2023-05-27 19:34:59','route'),(6,4,'Photo de Man Ray','public/media/images/jean_Larmes.jpg','2023-05-27 21:07:19','Larmes'),(7,5,'pomme sur fond noir','public/media/images/p_pomme.jpg','2024-03-23 19:51:17','pomme'),(18,12,'jldksjfkds','public/media/images/Goat.jpg','2026-05-22 13:18:02','Goat'),(19,7,'Un cochon souriant','public/media/images/John.jpg','2026-05-26 17:35:44','John'),(20,1,'','public/media/images/pochettes.jpg','2026-05-26 17:50:11','pochettes');
+INSERT INTO `photos` VALUES (28,12,'Un petit chat en exterieur très bg','public/media/images/hugo-chat_roux.jpg','2026-06-01 17:25:40','chat roux',3.50),(29,3,'Un gateau d\'anniversaire avec des bougies ','public/media/images/jacques-anniversaire.jpg','2026-06-02 08:58:52','anniversaire',3.50);
 /*!40000 ALTER TABLE `photos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -121,9 +122,69 @@ CREATE TABLE `votes` (
 
 LOCK TABLES `votes` WRITE;
 /*!40000 ALTER TABLE `votes` DISABLE KEYS */;
-INSERT INTO `votes` VALUES (1,1,3),(1,7,5),(1,12,3),(2,1,1),(2,12,5),(3,7,5),(3,12,5),(4,1,3),(4,7,2),(4,12,1),(5,1,5),(5,7,5),(5,12,1),(6,1,4),(6,7,2),(6,12,1),(7,7,1),(7,12,2),(18,1,4),(18,7,5);
+INSERT INTO `votes` VALUES (28,1,2),(28,3,5),(29,1,4),(29,12,3);
 /*!40000 ALTER TABLE `votes` ENABLE KEYS */;
 UNLOCK TABLES;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_unicode_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER table_insert
+AFTER INSERT ON votes
+FOR EACH ROW
+    UPDATE photos 
+    SET moyenne= (SELECT AVG(grade) FROM votes WHERE photo_id= NEW.photo_id)
+    WHERE id = NEW.photo_id */;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_unicode_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER table_update
+AFTER UPDATE ON votes
+FOR EACH ROW
+    UPDATE photos 
+    SET moyenne= (SELECT AVG(grade) FROM votes WHERE photo_id= NEW.photo_id)
+    WHERE id = NEW.photo_id */;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_unicode_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER table_delete
+AFTER DELETE ON votes
+FOR EACH ROW
+    UPDATE photos
+    SET moyenne= (SELECT AVG(grade) FROM votes WHERE photo_id= OLD.photo_id)
+    WHERE id = OLD.photo_id */;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -134,4 +195,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-05-30 12:43:53
+-- Dump completed on 2026-06-02 19:52:28
