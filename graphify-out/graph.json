@@ -4,46 +4,44 @@
   "graph": {
     "hyperedges": [
       {
-        "id": "mvc_request_flow_accueil",
-        "label": "Home Page MVC Request Flow",
+        "id": "bigpic_overlay_pattern",
+        "label": "Shared Lightbox Overlay DOM+JS Pattern across Views",
         "nodes": [
-          "controleurs_accueil",
-          "modeles_photos",
-          "modeles_rating",
-          "vues_vueaccueil"
+          "js_bigpic_bigpic_overlay",
+          "vues_vuepodium_podium_view",
+          "vues_vueaccueil_accueil_view"
         ],
-        "relation": "participate_in",
+        "relation": "implement",
         "confidence": "EXTRACTED",
         "confidence_score": 1.0,
-        "source_file": "CLAUDE.md"
+        "source_file": "public/js/bigPic.js"
       },
       {
-        "id": "rating_submission_flow",
-        "label": "Rating Submission Flow (View \u2192 Controller \u2192 Model \u2192 DB)",
+        "id": "rating_model_functions_group",
+        "label": "Rating Model Functions (importRating, selectUserRating, selectAllRatings, top3photos)",
         "nodes": [
-          "vues_vueaccueil",
-          "controleurs_note",
           "modeles_rating_importrating",
-          "db_table_votes"
+          "modeles_rating_selectuserrating",
+          "modeles_rating_selectallratings",
+          "modeles_rating_top3photos"
         ],
         "relation": "participate_in",
         "confidence": "EXTRACTED",
         "confidence_score": 1.0,
-        "source_file": "application/controleurs/note.php"
+        "source_file": "application/modeles/rating.php"
       },
       {
-        "id": "chart_data_flow",
-        "label": "Photos-per-Author Chart Data Pipeline",
+        "id": "podium_flow",
+        "label": "Podium Feature Flow: Controller \u2192 Model \u2192 View",
         "nodes": [
-          "controleurs_photosparauteur",
-          "controleurs_photosparauteur_getphotosparauteur",
-          "vues_vuephotosparauteur",
-          "concept_chartjs_cdn"
+          "controleurs_podium_podium_controller",
+          "modeles_rating_top3photos",
+          "vues_vuepodium_podium_view"
         ],
         "relation": "participate_in",
         "confidence": "EXTRACTED",
         "confidence_score": 1.0,
-        "source_file": "application/controleurs/photosParAuteur.php"
+        "source_file": "application/controleurs/podium.php"
       }
     ]
   },
@@ -53,333 +51,324 @@
       "file_type": "code",
       "source_file": "index.php",
       "source_location": "L1",
-      "id": "index_php",
-      "community": 13,
-      "norm_label": "index.php"
+      "community": 15,
+      "norm_label": "index.php",
+      "id": "index_php"
     },
     {
       "label": "package.json",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L1",
-      "id": "package_json",
-      "community": 8,
-      "norm_label": "package.json"
+      "community": 7,
+      "norm_label": "package.json",
+      "id": "package_json"
     },
     {
       "label": "devDependencies",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L2",
-      "id": "siteweb_sae203_package_devdependencies",
-      "community": 8,
-      "norm_label": "devdependencies"
+      "community": 7,
+      "norm_label": "devdependencies",
+      "id": "siteweb_sae203_package_devdependencies"
     },
     {
       "label": "@prettier/plugin-php",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L3",
-      "id": "siteweb_sae203_package_devdependencies_prettier_plugin_php",
-      "community": 8,
-      "norm_label": "@prettier/plugin-php"
+      "community": 7,
+      "norm_label": "@prettier/plugin-php",
+      "id": "siteweb_sae203_package_devdependencies_prettier_plugin_php"
     },
     {
       "label": "prettier",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L4",
-      "id": "siteweb_sae203_package_devdependencies_prettier",
-      "community": 8,
-      "norm_label": "prettier"
+      "community": 7,
+      "norm_label": "prettier",
+      "id": "siteweb_sae203_package_devdependencies_prettier"
     },
     {
       "label": "bigPic.js",
       "file_type": "code",
       "source_file": "public/js/bigPic.js",
       "source_location": "L1",
-      "id": "public_js_bigpic_js",
-      "community": 7,
-      "norm_label": "bigpic.js"
+      "community": 8,
+      "norm_label": "bigpic.js",
+      "id": "public_js_bigpic_js"
     },
     {
       "label": "bigPic",
       "file_type": "code",
       "source_file": "public/js/bigPic.js",
       "source_location": "L1",
-      "id": "js_bigpic_bigpic",
-      "community": 7,
-      "norm_label": "bigpic"
+      "community": 8,
+      "norm_label": "bigpic",
+      "id": "js_bigpic_bigpic"
     },
     {
       "label": "bigPicParent",
       "file_type": "code",
       "source_file": "public/js/bigPic.js",
       "source_location": "L2",
-      "id": "js_bigpic_bigpicparent",
-      "community": 7,
-      "norm_label": "bigpicparent"
+      "community": 8,
+      "norm_label": "bigpicparent",
+      "id": "js_bigpic_bigpicparent"
     },
     {
       "label": "images",
       "file_type": "code",
       "source_file": "public/js/bigPic.js",
       "source_location": "L4",
-      "id": "js_bigpic_images",
-      "community": 7,
-      "norm_label": "images"
+      "community": 8,
+      "norm_label": "images",
+      "id": "js_bigpic_images"
     },
     {
       "label": "vueAccueil.php",
       "file_type": "code",
       "source_file": "application/vues/vueAccueil.php",
       "source_location": "L1",
-      "id": "application_vues_vueaccueil_php",
-      "community": 14,
-      "norm_label": "vueaccueil.php"
+      "community": 16,
+      "norm_label": "vueaccueil.php",
+      "id": "application_vues_vueaccueil_php"
     },
     {
       "label": "vuePhotosParAuteur.php",
       "file_type": "code",
       "source_file": "application/vues/vuePhotosParAuteur.php",
       "source_location": "L1",
-      "id": "application_vues_vuephotosparauteur_php",
-      "community": 15,
-      "norm_label": "vuephotosparauteur.php"
+      "community": 17,
+      "norm_label": "vuephotosparauteur.php",
+      "id": "application_vues_vuephotosparauteur_php"
     },
     {
       "label": "vueConnexion.php",
       "file_type": "code",
       "source_file": "application/vues/vueConnexion.php",
       "source_location": "L1",
-      "id": "application_vues_vueconnexion_php",
-      "community": 16,
-      "norm_label": "vueconnexion.php"
+      "community": 18,
+      "norm_label": "vueconnexion.php",
+      "id": "application_vues_vueconnexion_php"
     },
     {
       "label": "header.php",
       "file_type": "code",
       "source_file": "application/vues/header.php",
       "source_location": "L1",
-      "id": "application_vues_header_php",
-      "community": 17,
-      "norm_label": "header.php"
+      "community": 19,
+      "norm_label": "header.php",
+      "id": "application_vues_header_php"
     },
     {
       "label": "vueInscription.php",
       "file_type": "code",
       "source_file": "application/vues/vueInscription.php",
       "source_location": "L1",
-      "id": "application_vues_vueinscription_php",
-      "community": 18,
-      "norm_label": "vueinscription.php"
+      "community": 20,
+      "norm_label": "vueinscription.php",
+      "id": "application_vues_vueinscription_php"
     },
     {
       "label": "footer.php",
       "file_type": "code",
       "source_file": "application/vues/footer.php",
       "source_location": "L1",
-      "id": "application_vues_footer_php",
-      "community": 19,
-      "norm_label": "footer.php"
+      "community": 21,
+      "norm_label": "footer.php",
+      "id": "application_vues_footer_php"
     },
     {
       "label": "vuePostPhoto.php",
       "file_type": "code",
       "source_file": "application/vues/vuePostPhoto.php",
       "source_location": "L1",
-      "id": "application_vues_vuepostphoto_php",
-      "community": 20,
-      "norm_label": "vuepostphoto.php"
+      "community": 22,
+      "norm_label": "vuepostphoto.php",
+      "id": "application_vues_vuepostphoto_php"
     },
     {
       "label": "utilisateurs.php",
       "file_type": "code",
       "source_file": "application/modeles/utilisateurs.php",
       "source_location": "L1",
-      "id": "application_modeles_utilisateurs_php",
-      "community": 6,
-      "norm_label": "utilisateurs.php"
+      "community": 1,
+      "norm_label": "utilisateurs.php",
+      "id": "application_modeles_utilisateurs_php"
     },
     {
       "label": "connexionOk()",
       "file_type": "code",
       "source_file": "application/modeles/utilisateurs.php",
       "source_location": "L3",
-      "id": "modeles_utilisateurs_connexionok",
-      "community": 6,
-      "norm_label": "connexionok()"
+      "community": 1,
+      "norm_label": "connexionok()",
+      "id": "modeles_utilisateurs_connexionok"
     },
     {
       "label": "getCom()",
       "file_type": "code",
       "source_file": "application/modeles/utilisateurs.php",
       "source_location": "L19",
-      "id": "modeles_utilisateurs_getcom",
-      "community": 6,
-      "norm_label": "getcom()"
+      "community": 1,
+      "norm_label": "getcom()",
+      "id": "modeles_utilisateurs_getcom"
     },
     {
       "label": "addUser()",
       "file_type": "code",
       "source_file": "application/modeles/utilisateurs.php",
       "source_location": "L31",
-      "id": "modeles_utilisateurs_adduser",
-      "community": 6,
-      "norm_label": "adduser()"
+      "community": 1,
+      "norm_label": "adduser()",
+      "id": "modeles_utilisateurs_adduser"
     },
     {
       "label": "post.php",
       "file_type": "code",
       "source_file": "application/modeles/post.php",
       "source_location": "L1",
-      "id": "application_modeles_post_php",
-      "community": 1,
-      "norm_label": "post.php"
+      "community": 6,
+      "norm_label": "post.php",
+      "id": "application_modeles_post_php"
     },
     {
       "label": "importPhoto()",
       "file_type": "code",
       "source_file": "application/modeles/post.php",
       "source_location": "L2",
-      "id": "modeles_post_importphoto",
-      "community": 1,
-      "norm_label": "importphoto()"
+      "community": 6,
+      "norm_label": "importphoto()",
+      "id": "modeles_post_importphoto"
     },
     {
       "label": "photos.php",
       "file_type": "code",
       "source_file": "application/modeles/photos.php",
       "source_location": "L1",
-      "id": "application_modeles_photos_php",
-      "community": 1,
-      "norm_label": "photos.php"
+      "community": 2,
+      "norm_label": "photos.php",
+      "id": "application_modeles_photos_php"
     },
     {
       "label": "obtenirPhotos()",
       "file_type": "code",
       "source_file": "application/modeles/photos.php",
       "source_location": "L5",
-      "id": "modeles_photos_obtenirphotos",
-      "community": 1,
-      "norm_label": "obtenirphotos()"
+      "community": 2,
+      "norm_label": "obtenirphotos()",
+      "id": "modeles_photos_obtenirphotos"
     },
     {
       "label": "rating.php",
       "file_type": "code",
       "source_file": "application/modeles/rating.php",
       "source_location": "L1",
-      "id": "application_modeles_rating_php",
-      "community": 4,
-      "norm_label": "rating.php"
+      "community": 0,
+      "norm_label": "rating.php",
+      "id": "application_modeles_rating_php"
     },
     {
       "label": "importRating()",
       "file_type": "code",
       "source_file": "application/modeles/rating.php",
       "source_location": "L3",
-      "id": "modeles_rating_importrating",
-      "community": 4,
-      "norm_label": "importrating()"
+      "community": 3,
+      "norm_label": "importrating()",
+      "id": "modeles_rating_importrating"
     },
     {
       "label": "selectUserRating()",
       "file_type": "code",
       "source_file": "application/modeles/rating.php",
       "source_location": "L18",
-      "id": "modeles_rating_selectuserrating",
-      "community": 4,
-      "norm_label": "selectuserrating()"
+      "community": 0,
+      "norm_label": "selectuserrating()",
+      "id": "modeles_rating_selectuserrating"
     },
     {
       "label": "selectAllRatings()",
       "file_type": "code",
       "source_file": "application/modeles/rating.php",
       "source_location": "L31",
-      "id": "modeles_rating_selectallratings",
-      "community": 4,
-      "norm_label": "selectallratings()"
+      "community": 0,
+      "norm_label": "selectallratings()",
+      "id": "modeles_rating_selectallratings"
     },
     {
       "label": "note.php",
       "file_type": "code",
       "source_file": "application/controleurs/note.php",
       "source_location": "L1",
-      "id": "application_controleurs_note_php",
-      "community": 21,
-      "norm_label": "note.php"
+      "community": 23,
+      "norm_label": "note.php",
+      "id": "application_controleurs_note_php"
     },
     {
       "label": "connexion.php",
       "file_type": "code",
       "source_file": "application/controleurs/connexion.php",
       "source_location": "L1",
-      "id": "application_controleurs_connexion_php",
-      "community": 22,
-      "norm_label": "connexion.php"
+      "community": 24,
+      "norm_label": "connexion.php",
+      "id": "application_controleurs_connexion_php"
     },
     {
       "label": "accueil.php",
       "file_type": "code",
       "source_file": "application/controleurs/accueil.php",
       "source_location": "L1",
-      "id": "application_controleurs_accueil_php",
-      "community": 23,
-      "norm_label": "accueil.php"
+      "community": 25,
+      "norm_label": "accueil.php",
+      "id": "application_controleurs_accueil_php"
     },
     {
       "label": "tests.php",
       "file_type": "code",
       "source_file": "application/controleurs/tests.php",
       "source_location": "L1",
-      "id": "application_controleurs_tests_php",
-      "community": 24,
-      "norm_label": "tests.php"
+      "community": 26,
+      "norm_label": "tests.php",
+      "id": "application_controleurs_tests_php"
     },
     {
       "label": "postPhoto.php",
       "file_type": "code",
       "source_file": "application/controleurs/postPhoto.php",
       "source_location": "L1",
-      "id": "application_controleurs_postphoto_php",
-      "community": 25,
-      "norm_label": "postphoto.php"
+      "community": 27,
+      "norm_label": "postphoto.php",
+      "id": "application_controleurs_postphoto_php"
     },
     {
       "label": "deconnexion.php",
       "file_type": "code",
       "source_file": "application/controleurs/deconnexion.php",
       "source_location": "L1",
-      "id": "application_controleurs_deconnexion_php",
-      "community": 26,
-      "norm_label": "deconnexion.php"
+      "community": 28,
+      "norm_label": "deconnexion.php",
+      "id": "application_controleurs_deconnexion_php"
     },
     {
       "label": "photosParAuteur.php",
       "file_type": "code",
       "source_file": "application/controleurs/photosParAuteur.php",
       "source_location": "L1",
-      "id": "application_controleurs_photosparauteur_php",
-      "community": 1,
-      "norm_label": "photosparauteur.php"
+      "community": 3,
+      "norm_label": "photosparauteur.php",
+      "id": "application_controleurs_photosparauteur_php"
     },
     {
       "label": "getPhotosParAuteur()",
       "file_type": "code",
       "source_file": "application/controleurs/photosParAuteur.php",
       "source_location": "L4",
-      "id": "controleurs_photosparauteur_getphotosparauteur",
-      "community": 1,
-      "norm_label": "getphotosparauteur()"
-    },
-    {
-      "label": "inscription.php",
-      "file_type": "code",
-      "source_file": "application/controleurs/inscription.php",
-      "source_location": "L1",
-      "id": "application_controleurs_inscription_php",
-      "community": 27,
-      "norm_label": "inscription.php"
+      "community": 3,
+      "norm_label": "getphotosparauteur()",
+      "id": "controleurs_photosparauteur_getphotosparauteur"
     },
     {
       "label": "index.php (Entry Point)",
@@ -390,9 +379,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "index_index",
-      "community": 3,
-      "norm_label": "index.php (entry point)"
+      "community": 2,
+      "norm_label": "index.php (entry point)",
+      "id": "index_index"
     },
     {
       "label": "package.json (Dev Dependencies)",
@@ -403,9 +392,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "package_packagejson",
-      "community": 28,
-      "norm_label": "package.json (dev dependencies)"
+      "community": 29,
+      "norm_label": "package.json (dev dependencies)",
+      "id": "package_packagejson"
     },
     {
       "label": "database.sql (Schema & Seed Data)",
@@ -416,9 +405,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "database_sql",
-      "community": 29,
-      "norm_label": "database.sql (schema & seed data)"
+      "community": 30,
+      "norm_label": "database.sql (schema & seed data)",
+      "id": "database_sql"
     },
     {
       "label": "bigPic.js (Lightbox Script)",
@@ -429,9 +418,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "js_bigpic",
-      "community": 2,
-      "norm_label": "bigpic.js (lightbox script)"
+      "community": 4,
+      "norm_label": "bigpic.js (lightbox script)",
+      "id": "js_bigpic"
     },
     {
       "label": "vueAccueil.php (Home View)",
@@ -442,9 +431,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "vues_vueaccueil",
-      "community": 2,
-      "norm_label": "vueaccueil.php (home view)"
+      "community": 4,
+      "norm_label": "vueaccueil.php (home view)",
+      "id": "vues_vueaccueil"
     },
     {
       "label": "vuePhotosParAuteur.php (Chart View)",
@@ -455,9 +444,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "vues_vuephotosparauteur",
-      "community": 2,
-      "norm_label": "vuephotosparauteur.php (chart view)"
+      "community": 4,
+      "norm_label": "vuephotosparauteur.php (chart view)",
+      "id": "vues_vuephotosparauteur"
     },
     {
       "label": "vueConnexion.php (Login View)",
@@ -468,9 +457,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "vues_vueconnexion",
-      "community": 0,
-      "norm_label": "vueconnexion.php (login view)"
+      "community": 1,
+      "norm_label": "vueconnexion.php (login view)",
+      "id": "vues_vueconnexion"
     },
     {
       "label": "header.php (Shared Header)",
@@ -481,9 +470,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "vues_header",
-      "community": 0,
-      "norm_label": "header.php (shared header)"
+      "community": 1,
+      "norm_label": "header.php (shared header)",
+      "id": "vues_header"
     },
     {
       "label": "vueInscription.php (Registration View)",
@@ -494,9 +483,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "vues_vueinscription",
-      "community": 0,
-      "norm_label": "vueinscription.php (registration view)"
+      "community": 1,
+      "norm_label": "vueinscription.php (registration view)",
+      "id": "vues_vueinscription"
     },
     {
       "label": "footer.php (Shared Footer)",
@@ -507,9 +496,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "vues_footer",
-      "community": 2,
-      "norm_label": "footer.php (shared footer)"
+      "community": 4,
+      "norm_label": "footer.php (shared footer)",
+      "id": "vues_footer"
     },
     {
       "label": "vuePostPhoto.php (Upload Photo View)",
@@ -520,9 +509,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "vues_vuepostphoto",
-      "community": 0,
-      "norm_label": "vuepostphoto.php (upload photo view)"
+      "community": 1,
+      "norm_label": "vuepostphoto.php (upload photo view)",
+      "id": "vues_vuepostphoto"
     },
     {
       "label": "utilisateurs.php (User Model)",
@@ -533,9 +522,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "modeles_utilisateurs",
-      "community": 0,
-      "norm_label": "utilisateurs.php (user model)"
+      "community": 1,
+      "norm_label": "utilisateurs.php (user model)",
+      "id": "modeles_utilisateurs"
     },
     {
       "label": "post.php (Photo Upload Model)",
@@ -546,9 +535,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "modeles_post",
-      "community": 1,
-      "norm_label": "post.php (photo upload model)"
+      "community": 6,
+      "norm_label": "post.php (photo upload model)",
+      "id": "modeles_post"
     },
     {
       "label": "photos.php (Photos Model)",
@@ -559,9 +548,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "modeles_photos",
-      "community": 3,
-      "norm_label": "photos.php (photos model)"
+      "community": 2,
+      "norm_label": "photos.php (photos model)",
+      "id": "modeles_photos"
     },
     {
       "label": "rating.php (Rating Model)",
@@ -572,9 +561,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "modeles_rating",
-      "community": 3,
-      "norm_label": "rating.php (rating model)"
+      "community": 2,
+      "norm_label": "rating.php (rating model)",
+      "id": "modeles_rating"
     },
     {
       "label": "note.php (Rating Controller)",
@@ -585,9 +574,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "controleurs_note",
-      "community": 3,
-      "norm_label": "note.php (rating controller)"
+      "community": 2,
+      "norm_label": "note.php (rating controller)",
+      "id": "controleurs_note"
     },
     {
       "label": "connexion.php (Login Controller)",
@@ -598,9 +587,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "controleurs_connexion",
-      "community": 0,
-      "norm_label": "connexion.php (login controller)"
+      "community": 1,
+      "norm_label": "connexion.php (login controller)",
+      "id": "controleurs_connexion"
     },
     {
       "label": "accueil.php (Home Controller)",
@@ -611,9 +600,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "controleurs_accueil",
-      "community": 3,
-      "norm_label": "accueil.php (home controller)"
+      "community": 2,
+      "norm_label": "accueil.php (home controller)",
+      "id": "controleurs_accueil"
     },
     {
       "label": "tests.php (DB Connection Test)",
@@ -624,9 +613,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "controleurs_tests",
-      "community": 30,
-      "norm_label": "tests.php (db connection test)"
+      "community": 31,
+      "norm_label": "tests.php (db connection test)",
+      "id": "controleurs_tests"
     },
     {
       "label": "postPhoto.php (Photo Upload Controller)",
@@ -637,9 +626,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "controleurs_postphoto",
-      "community": 1,
-      "norm_label": "postphoto.php (photo upload controller)"
+      "community": 6,
+      "norm_label": "postphoto.php (photo upload controller)",
+      "id": "controleurs_postphoto"
     },
     {
       "label": "deconnexion.php (Logout Controller)",
@@ -650,9 +639,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "controleurs_deconnexion",
       "community": 0,
-      "norm_label": "deconnexion.php (logout controller)"
+      "norm_label": "deconnexion.php (logout controller)",
+      "id": "controleurs_deconnexion"
     },
     {
       "label": "photosParAuteur.php (Chart Controller)",
@@ -663,9 +652,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "controleurs_photosparauteur",
-      "community": 2,
-      "norm_label": "photosparauteur.php (chart controller)"
+      "community": 4,
+      "norm_label": "photosparauteur.php (chart controller)",
+      "id": "controleurs_photosparauteur"
     },
     {
       "label": "inscription.php (Registration Controller)",
@@ -676,9 +665,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "controleurs_inscription",
-      "community": 0,
-      "norm_label": "inscription.php (registration controller)"
+      "community": 1,
+      "norm_label": "inscription.php (registration controller)",
+      "id": "controleurs_inscription"
     },
     {
       "label": "CLAUDE.md (Project Documentation)",
@@ -689,9 +678,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "claude_md",
-      "community": 3,
-      "norm_label": "claude.md (project documentation)"
+      "community": 2,
+      "norm_label": "claude.md (project documentation)",
+      "id": "claude_md"
     },
     {
       "label": "Plain PHP MVC Pattern",
@@ -702,9 +691,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "concept_mvc_pattern",
-      "community": 3,
-      "norm_label": "plain php mvc pattern"
+      "community": 2,
+      "norm_label": "plain php mvc pattern",
+      "id": "concept_mvc_pattern"
     },
     {
       "label": "Session-based Authentication",
@@ -715,9 +704,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "concept_session_auth",
       "community": 0,
-      "norm_label": "session-based authentication"
+      "norm_label": "session-based authentication",
+      "id": "concept_session_auth"
     },
     {
       "label": "ON DUPLICATE KEY UPDATE for Upsert Voting",
@@ -728,9 +717,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "concept_upsert_rating",
-      "community": 4,
-      "norm_label": "on duplicate key update for upsert voting"
+      "community": 3,
+      "norm_label": "on duplicate key update for upsert voting",
+      "id": "concept_upsert_rating"
     },
     {
       "label": "Author Cannot Vote Own Photo (View-enforced)",
@@ -741,9 +730,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "concept_author_vote_restriction",
-      "community": 2,
-      "norm_label": "author cannot vote own photo (view-enforced)"
+      "community": 4,
+      "norm_label": "author cannot vote own photo (view-enforced)",
+      "id": "concept_author_vote_restriction"
     },
     {
       "label": "Controller Embedded in View Pattern",
@@ -754,9 +743,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "concept_embedded_controller",
-      "community": 2,
-      "norm_label": "controller embedded in view pattern"
+      "community": 4,
+      "norm_label": "controller embedded in view pattern",
+      "id": "concept_embedded_controller"
     },
     {
       "label": "Chart.js from CDN for Bar Chart",
@@ -767,9 +756,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "concept_chartjs_cdn",
-      "community": 2,
-      "norm_label": "chart.js from cdn for bar chart"
+      "community": 4,
+      "norm_label": "chart.js from cdn for bar chart",
+      "id": "concept_chartjs_cdn"
     },
     {
       "label": "DB Table: users",
@@ -780,9 +769,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "db_table_users",
-      "community": 6,
-      "norm_label": "db table: users"
+      "community": 3,
+      "norm_label": "db table: users",
+      "id": "db_table_users"
     },
     {
       "label": "DB Table: photos",
@@ -793,9 +782,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "db_table_photos",
-      "community": 1,
-      "norm_label": "db table: photos"
+      "community": 3,
+      "norm_label": "db table: photos",
+      "id": "db_table_photos"
     },
     {
       "label": "DB Table: votes",
@@ -806,9 +795,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "db_table_votes",
-      "community": 4,
-      "norm_label": "db table: votes"
+      "community": 3,
+      "norm_label": "db table: votes",
+      "id": "db_table_votes"
     },
     {
       "label": "DB Table: communes",
@@ -819,9 +808,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "db_table_communes",
-      "community": 6,
-      "norm_label": "db table: communes"
+      "community": 1,
+      "norm_label": "db table: communes",
+      "id": "db_table_communes"
     },
     {
       "label": "Crumpled White Paper Texture (paper_5)",
@@ -832,9 +821,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "asset_paper_5_main",
-      "community": 11,
-      "norm_label": "crumpled white paper texture (paper_5)"
+      "community": 13,
+      "norm_label": "crumpled white paper texture (paper_5)",
+      "id": "asset_paper_5_main"
     },
     {
       "label": "Wrinkled Paper Background Texture",
@@ -845,9 +834,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "asset_paper_5_texture",
-      "community": 11,
-      "norm_label": "wrinkled paper background texture"
+      "community": 13,
+      "norm_label": "wrinkled paper background texture",
+      "id": "asset_paper_5_texture"
     },
     {
       "label": "John - Meme Photo (John Pork Calling Screen)",
@@ -858,9 +847,9 @@
       "captured_at": null,
       "author": "John",
       "contributor": null,
-      "id": "images_john_photo",
       "community": 5,
-      "norm_label": "john - meme photo (john pork calling screen)"
+      "norm_label": "john - meme photo (john pork calling screen)",
+      "id": "images_john_photo"
     },
     {
       "label": "Apple Still Life - Dark Background",
@@ -871,9 +860,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "images_p_pomme_photo",
       "community": 5,
-      "norm_label": "apple still life - dark background"
+      "norm_label": "apple still life - dark background",
+      "id": "images_p_pomme_photo"
     },
     {
       "label": "Aline - Fantasy Scene with Blue Butterflies and Mushrooms",
@@ -884,9 +873,9 @@
       "captured_at": null,
       "author": "aline",
       "contributor": null,
-      "id": "images_aline_fantasy_photo",
       "community": 5,
-      "norm_label": "aline - fantasy scene with blue butterflies and mushrooms"
+      "norm_label": "aline - fantasy scene with blue butterflies and mushrooms",
+      "id": "images_aline_fantasy_photo"
     },
     {
       "label": "Aline - Dramatic Mountain Lake with Lightning",
@@ -897,9 +886,9 @@
       "captured_at": null,
       "author": "aline",
       "contributor": null,
-      "id": "images_aline_nature_photo",
       "community": 5,
-      "norm_label": "aline - dramatic mountain lake with lightning"
+      "norm_label": "aline - dramatic mountain lake with lightning",
+      "id": "images_aline_nature_photo"
     },
     {
       "label": "Jean - Larmes (Tears) - Vintage Black and White Portrait",
@@ -910,9 +899,9 @@
       "captured_at": null,
       "author": "jean",
       "contributor": null,
-      "id": "images_jean_larmes_photo",
-      "community": 10,
-      "norm_label": "jean - larmes (tears) - vintage black and white portrait"
+      "community": 12,
+      "norm_label": "jean - larmes (tears) - vintage black and white portrait",
+      "id": "images_jean_larmes_photo"
     },
     {
       "label": "Jean - Fleurs (Flowers) - Sunny Spring Meadow",
@@ -923,9 +912,9 @@
       "captured_at": null,
       "author": "jean",
       "contributor": null,
-      "id": "images_jean_fleurs_photo",
-      "community": 10,
-      "norm_label": "jean - fleurs (flowers) - sunny spring meadow"
+      "community": 12,
+      "norm_label": "jean - fleurs (flowers) - sunny spring meadow",
+      "id": "images_jean_fleurs_photo"
     },
     {
       "label": "User: John",
@@ -936,9 +925,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "concept_user_john",
       "community": 5,
-      "norm_label": "user: john"
+      "norm_label": "user: john",
+      "id": "concept_user_john"
     },
     {
       "label": "User: Aline",
@@ -949,9 +938,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "concept_user_aline",
       "community": 5,
-      "norm_label": "user: aline"
+      "norm_label": "user: aline",
+      "id": "concept_user_aline"
     },
     {
       "label": "User: Jean",
@@ -962,9 +951,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "concept_user_jean",
-      "community": 10,
-      "norm_label": "user: jean"
+      "community": 12,
+      "norm_label": "user: jean",
+      "id": "concept_user_jean"
     },
     {
       "label": "Jacques Route - Autumn Forest Path",
@@ -976,9 +965,9 @@
       "author": "jacques",
       "contributor": null,
       "description": "Landscape photography of a winding dirt road through an autumn forest. Warm orange, red, and yellow foliage on both sides, soft misty light in the background. Serene, painterly mood with rich fall colors.",
-      "id": "images_jacques_route_photo",
       "community": 9,
-      "norm_label": "jacques route - autumn forest path"
+      "norm_label": "jacques route - autumn forest path",
+      "id": "images_jacques_route_photo"
     },
     {
       "label": "Adelouve Renard Cute - Sleeping Fox",
@@ -990,9 +979,9 @@
       "author": "adelouve",
       "contributor": null,
       "description": "Wildlife close-up photography of a young red fox curled up asleep on a rocky surface. Soft green bokeh background with foliage. Warm orange fur, peaceful and endearing mood.",
-      "id": "images_adelouve_renard_cute_photo",
       "community": 9,
-      "norm_label": "adelouve renard cute - sleeping fox"
+      "norm_label": "adelouve renard cute - sleeping fox",
+      "id": "images_adelouve_renard_cute_photo"
     },
     {
       "label": "Aline Chouette - Owl Close-Up",
@@ -1004,9 +993,9 @@
       "author": "aline",
       "contributor": null,
       "description": "Dramatic close-up portrait of a great horned owl face against a near-black background. Striking orange-red eyes, detailed feather texture. Dark, intense, and mysterious mood.",
-      "id": "images_aline_chouette_photo",
       "community": 9,
-      "norm_label": "aline chouette - owl close-up"
+      "norm_label": "aline chouette - owl close-up",
+      "id": "images_aline_chouette_photo"
     },
     {
       "label": "Pochettes - Colorful Book Covers Still Life",
@@ -1018,9 +1007,9 @@
       "author": null,
       "contributor": null,
       "description": "Still life photograph of colorful folder-like book covers (pink, yellow, light blue, green) fanned out, with a copy of Bertrand Russell's 'Histoire de la Philosophie Occidentale' (Les Belles Lettres edition) placed on top. Clean, flat-lay style with neutral background.",
-      "id": "images_pochettes_photo",
-      "community": 12,
-      "norm_label": "pochettes - colorful book covers still life"
+      "community": 14,
+      "norm_label": "pochettes - colorful book covers still life",
+      "id": "images_pochettes_photo"
     },
     {
       "label": "Goat - Male Portrait",
@@ -1032,9 +1021,244 @@
       "author": "goat",
       "contributor": null,
       "description": "Head-and-shoulders portrait photograph of a middle-aged man with short dark hair, slight stubble, wearing a dark jacket. Neutral light background. Casual, ID-style or profile photo mood.",
-      "id": "images_goat_photo",
-      "community": 12,
-      "norm_label": "goat - male portrait"
+      "community": 14,
+      "norm_label": "goat - male portrait",
+      "id": "images_goat_photo"
+    },
+    {
+      "label": "vuePodium.php",
+      "file_type": "code",
+      "source_file": "application/vues/vuePodium.php",
+      "source_location": "L1",
+      "id": "application_vues_vuepodium_php",
+      "community": 32,
+      "norm_label": "vuepodium.php"
+    },
+    {
+      "label": "top3photos()",
+      "file_type": "code",
+      "source_file": "application/modeles/rating.php",
+      "source_location": "L50",
+      "id": "modeles_rating_top3photos",
+      "community": 0,
+      "norm_label": "top3photos()"
+    },
+    {
+      "label": "podium.php",
+      "file_type": "code",
+      "source_file": "application/controleurs/podium.php",
+      "source_location": "L1",
+      "id": "application_controleurs_podium_php",
+      "community": 33,
+      "norm_label": "podium.php"
+    },
+    {
+      "label": "bigPic Overlay Module",
+      "file_type": "code",
+      "source_file": "public/js/bigPic.js",
+      "source_location": "1-16",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "js_bigpic_bigpic_overlay",
+      "community": 0,
+      "norm_label": "bigpic overlay module"
+    },
+    {
+      "label": "Podium View (vuePodium.php)",
+      "file_type": "code",
+      "source_file": "application/vues/vuePodium.php",
+      "source_location": "1-52",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "vues_vuepodium_podium_view",
+      "community": 0,
+      "norm_label": "podium view (vuepodium.php)"
+    },
+    {
+      "label": "Accueil View (vueAccueil.php)",
+      "file_type": "code",
+      "source_file": "application/vues/vueAccueil.php",
+      "source_location": "1-92",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "vues_vueaccueil_accueil_view",
+      "community": 0,
+      "norm_label": "accueil view (vueaccueil.php)"
+    },
+    {
+      "label": "Photos Par Auteur Chart View",
+      "file_type": "code",
+      "source_file": "application/vues/vuePhotosParAuteur.php",
+      "source_location": "1-57",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "vues_vuephotosparauteur_chartview",
+      "community": 0,
+      "norm_label": "photos par auteur chart view"
+    },
+    {
+      "label": "Header Partial (header.php)",
+      "file_type": "code",
+      "source_file": "application/vues/header.php",
+      "source_location": "1-34",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "vues_header_header",
+      "community": 0,
+      "norm_label": "header partial (header.php)"
+    },
+    {
+      "label": "Post Photo View (vuePostPhoto.php)",
+      "file_type": "code",
+      "source_file": "application/vues/vuePostPhoto.php",
+      "source_location": "1-43",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "vues_vuepostphoto_postphoto_view",
+      "community": 0,
+      "norm_label": "post photo view (vuepostphoto.php)"
+    },
+    {
+      "label": "Podium Controller (podium.php)",
+      "file_type": "code",
+      "source_file": "application/controleurs/podium.php",
+      "source_location": "1-14",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "controleurs_podium_podium_controller",
+      "community": 0,
+      "norm_label": "podium controller (podium.php)"
+    },
+    {
+      "label": "Lightbox / Big Image Overlay Pattern",
+      "file_type": "concept",
+      "source_file": "public/js/bigPic.js",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "concept_bigpic_lightbox",
+      "community": 0,
+      "norm_label": "lightbox / big image overlay pattern"
+    },
+    {
+      "label": "ON DUPLICATE KEY UPDATE Upsert Pattern",
+      "file_type": "rationale",
+      "source_file": "application/modeles/rating.php",
+      "source_location": "8",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "concept_onduplicate_upsert",
+      "community": 3,
+      "norm_label": "on duplicate key update upsert pattern"
+    },
+    {
+      "label": "Author Self-Vote Restriction (view-level)",
+      "file_type": "rationale",
+      "source_file": "application/vues/vueAccueil.php",
+      "source_location": "30-33",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "concept_author_selfvote_restriction",
+      "community": 0,
+      "norm_label": "author self-vote restriction (view-level)"
+    },
+    {
+      "label": "Orange Tabby Cat",
+      "file_type": "image",
+      "source_file": "public/media/images/hugo-chat_roux.jpg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": "hugo",
+      "contributor": null,
+      "id": "images_hugo_chat_roux_subject",
+      "community": 10,
+      "norm_label": "orange tabby cat"
+    },
+    {
+      "label": "Outdoor Paved Surface",
+      "file_type": "image",
+      "source_file": "public/media/images/hugo-chat_roux.jpg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "images_hugo_chat_roux_setting",
+      "community": 10,
+      "norm_label": "outdoor paved surface"
+    },
+    {
+      "label": "Photo: hugo-chat_roux",
+      "file_type": "image",
+      "source_file": "public/media/images/hugo-chat_roux.jpg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": "hugo",
+      "contributor": null,
+      "id": "images_hugo_chat_roux_photo",
+      "community": 10,
+      "norm_label": "photo: hugo-chat_roux"
+    },
+    {
+      "label": "Birthday Cake with Candles",
+      "file_type": "image",
+      "source_file": "public/media/images/jacques-anniversaire.jpg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "images_jacques_anniversaire_subject",
+      "community": 11,
+      "norm_label": "birthday cake with candles"
+    },
+    {
+      "label": "Birthday Celebration Theme",
+      "file_type": "image",
+      "source_file": "public/media/images/jacques-anniversaire.jpg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "images_jacques_anniversaire_theme",
+      "community": 11,
+      "norm_label": "birthday celebration theme"
+    },
+    {
+      "label": "Jacques (Photo Author)",
+      "file_type": "image",
+      "source_file": "public/media/images/jacques-anniversaire.jpg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": "jacques",
+      "contributor": null,
+      "id": "images_jacques_anniversaire_user",
+      "community": 11,
+      "norm_label": "jacques (photo author)"
     }
   ],
   "links": [
@@ -1044,9 +1268,9 @@
       "source_file": "package.json",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package_json",
-      "target": "siteweb_sae203_package_devdependencies",
-      "confidence_score": 1.0
+      "target": "siteweb_sae203_package_devdependencies"
     },
     {
       "relation": "contains",
@@ -1054,9 +1278,9 @@
       "source_file": "package.json",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "siteweb_sae203_package_devdependencies",
-      "target": "siteweb_sae203_package_devdependencies_prettier",
-      "confidence_score": 1.0
+      "target": "siteweb_sae203_package_devdependencies_prettier"
     },
     {
       "relation": "contains",
@@ -1064,9 +1288,9 @@
       "source_file": "package.json",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "siteweb_sae203_package_devdependencies",
-      "target": "siteweb_sae203_package_devdependencies_prettier_plugin_php",
-      "confidence_score": 1.0
+      "target": "siteweb_sae203_package_devdependencies_prettier_plugin_php"
     },
     {
       "relation": "contains",
@@ -1074,9 +1298,9 @@
       "source_file": "public/js/bigPic.js",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "public_js_bigpic_js",
-      "target": "js_bigpic_bigpic",
-      "confidence_score": 1.0
+      "target": "js_bigpic_bigpic"
     },
     {
       "relation": "contains",
@@ -1084,9 +1308,9 @@
       "source_file": "public/js/bigPic.js",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "public_js_bigpic_js",
-      "target": "js_bigpic_bigpicparent",
-      "confidence_score": 1.0
+      "target": "js_bigpic_bigpicparent"
     },
     {
       "relation": "contains",
@@ -1094,9 +1318,9 @@
       "source_file": "public/js/bigPic.js",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "public_js_bigpic_js",
-      "target": "js_bigpic_images",
-      "confidence_score": 1.0
+      "target": "js_bigpic_images"
     },
     {
       "relation": "contains",
@@ -1104,9 +1328,9 @@
       "source_file": "application/modeles/utilisateurs.php",
       "source_location": "L31",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "application_modeles_utilisateurs_php",
-      "target": "modeles_utilisateurs_adduser",
-      "confidence_score": 1.0
+      "target": "modeles_utilisateurs_adduser"
     },
     {
       "relation": "contains",
@@ -1114,9 +1338,9 @@
       "source_file": "application/modeles/utilisateurs.php",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "application_modeles_utilisateurs_php",
-      "target": "modeles_utilisateurs_connexionok",
-      "confidence_score": 1.0
+      "target": "modeles_utilisateurs_connexionok"
     },
     {
       "relation": "contains",
@@ -1124,9 +1348,9 @@
       "source_file": "application/modeles/utilisateurs.php",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "application_modeles_utilisateurs_php",
-      "target": "modeles_utilisateurs_getcom",
-      "confidence_score": 1.0
+      "target": "modeles_utilisateurs_getcom"
     },
     {
       "relation": "calls",
@@ -1194,9 +1418,9 @@
       "source_file": "application/modeles/post.php",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "application_modeles_post_php",
-      "target": "modeles_post_importphoto",
-      "confidence_score": 1.0
+      "target": "modeles_post_importphoto"
     },
     {
       "relation": "calls",
@@ -1210,6 +1434,16 @@
     },
     {
       "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "application/modeles/post.php",
+      "source_location": "5",
+      "weight": 1.0,
+      "source": "modeles_post_importphoto",
+      "target": "concept_session_auth"
+    },
+    {
+      "relation": "references",
       "confidence": "INFERRED",
       "confidence_score": 0.95,
       "source_file": "application/modeles/post.php",
@@ -1219,14 +1453,24 @@
       "target": "db_table_photos"
     },
     {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "application/vues/vuePostPhoto.php",
+      "source_location": "13",
+      "weight": 0.95,
+      "source": "vues_vuepostphoto_postphoto_view",
+      "target": "modeles_post_importphoto"
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "application/modeles/photos.php",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "application_modeles_photos_php",
-      "target": "modeles_photos_obtenirphotos",
-      "confidence_score": 1.0
+      "target": "modeles_photos_obtenirphotos"
     },
     {
       "relation": "calls",
@@ -1254,9 +1498,9 @@
       "source_file": "application/modeles/rating.php",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "application_modeles_rating_php",
-      "target": "modeles_rating_importrating",
-      "confidence_score": 1.0
+      "target": "modeles_rating_importrating"
     },
     {
       "relation": "contains",
@@ -1264,9 +1508,9 @@
       "source_file": "application/modeles/rating.php",
       "source_location": "L31",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "application_modeles_rating_php",
-      "target": "modeles_rating_selectallratings",
-      "confidence_score": 1.0
+      "target": "modeles_rating_selectallratings"
     },
     {
       "relation": "contains",
@@ -1274,8 +1518,18 @@
       "source_file": "application/modeles/rating.php",
       "source_location": "L18",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "application_modeles_rating_php",
-      "target": "modeles_rating_selectuserrating",
+      "target": "modeles_rating_selectuserrating"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "application/modeles/rating.php",
+      "source_location": "L50",
+      "weight": 1.0,
+      "source": "application_modeles_rating_php",
+      "target": "modeles_rating_top3photos",
       "confidence_score": 1.0
     },
     {
@@ -1287,6 +1541,16 @@
       "weight": 1.0,
       "source": "controleurs_note",
       "target": "modeles_rating_importrating"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "application/modeles/rating.php",
+      "source_location": "8",
+      "weight": 1.0,
+      "source": "modeles_rating_importrating",
+      "target": "concept_onduplicate_upsert"
     },
     {
       "relation": "implements",
@@ -1320,6 +1584,16 @@
     },
     {
       "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "application/modeles/rating.php",
+      "source_location": "23",
+      "weight": 1.0,
+      "source": "modeles_rating_selectuserrating",
+      "target": "concept_session_auth"
+    },
+    {
+      "relation": "references",
       "confidence": "INFERRED",
       "confidence_score": 0.95,
       "source_file": "application/modeles/rating.php",
@@ -1339,6 +1613,16 @@
       "target": "db_table_votes"
     },
     {
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "application/modeles/rating.php",
+      "source_location": null,
+      "weight": 0.75,
+      "source": "modeles_rating_top3photos",
+      "target": "modeles_rating_selectallratings"
+    },
+    {
       "relation": "calls",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
@@ -1349,14 +1633,24 @@
       "target": "modeles_rating_selectallratings"
     },
     {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "application/vues/vueAccueil.php",
+      "source_location": "15",
+      "weight": 1.0,
+      "source": "vues_vueaccueil_accueil_view",
+      "target": "modeles_rating_selectallratings"
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "application/controleurs/photosParAuteur.php",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "application_controleurs_photosparauteur_php",
-      "target": "controleurs_photosparauteur_getphotosparauteur",
-      "confidence_score": 1.0
+      "target": "controleurs_photosparauteur_getphotosparauteur"
     },
     {
       "relation": "references",
@@ -1507,16 +1801,6 @@
       "weight": 1.0,
       "source": "vues_vueconnexion",
       "target": "vues_header"
-    },
-    {
-      "relation": "semantically_similar_to",
-      "confidence": "INFERRED",
-      "confidence_score": 0.55,
-      "source_file": "application/vues/vueConnexion.php",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "vues_vueconnexion",
-      "target": "vues_vueconnexion"
     },
     {
       "relation": "semantically_similar_to",
@@ -1700,6 +1984,26 @@
     },
     {
       "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "application/vues/header.php",
+      "source_location": "18",
+      "weight": 1.0,
+      "source": "vues_header_header",
+      "target": "concept_session_auth"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "application/vues/vueAccueil.php",
+      "source_location": "31",
+      "weight": 1.0,
+      "source": "vues_vueaccueil_accueil_view",
+      "target": "concept_session_auth"
+    },
+    {
+      "relation": "references",
       "confidence": "INFERRED",
       "confidence_score": 0.95,
       "source_file": "application/modeles/rating.php",
@@ -1739,8 +2043,6 @@
       "target": "db_table_photos"
     },
     {
-      "from": "asset_paper_5_main",
-      "to": "asset_paper_5_texture",
       "relation": "USED_FOR",
       "provenance": "INFERRED",
       "confidence_score": 0.85,
@@ -1851,51 +2153,229 @@
       "note": "Both are user-uploaded photos in the same application media directory",
       "source": "images_goat_photo",
       "target": "images_pochettes_photo"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "application/controleurs/podium.php",
+      "source_location": "12",
+      "weight": 1.0,
+      "source": "controleurs_podium_podium_controller",
+      "target": "modeles_rating_top3photos"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/js/bigPic.js",
+      "source_location": "1-16",
+      "weight": 1.0,
+      "source": "js_bigpic_bigpic_overlay",
+      "target": "concept_bigpic_lightbox"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "application/vues/vueAccueil.php",
+      "source_location": "92",
+      "weight": 1.0,
+      "source": "vues_vueaccueil_accueil_view",
+      "target": "js_bigpic_bigpic_overlay"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "application/vues/vuePodium.php",
+      "source_location": "52",
+      "weight": 1.0,
+      "source": "vues_vuepodium_podium_view",
+      "target": "js_bigpic_bigpic_overlay"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "application/controleurs/podium.php",
+      "source_location": "14",
+      "weight": 1.0,
+      "source": "controleurs_podium_podium_controller",
+      "target": "vues_vuepodium_podium_view"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "application/vues/vuePodium.php",
+      "source_location": "46-49",
+      "weight": 1.0,
+      "source": "vues_vuepodium_podium_view",
+      "target": "concept_bigpic_lightbox"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "application/vues/vuePodium.php",
+      "source_location": "1",
+      "weight": 1.0,
+      "source": "vues_vuepodium_podium_view",
+      "target": "vues_header_header"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "application/vues/vueAccueil.php",
+      "source_location": "30-33",
+      "weight": 1.0,
+      "source": "vues_vueaccueil_accueil_view",
+      "target": "concept_author_selfvote_restriction"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "application/vues/vueAccueil.php",
+      "source_location": "85-88",
+      "weight": 1.0,
+      "source": "vues_vueaccueil_accueil_view",
+      "target": "concept_bigpic_lightbox"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "application/vues/vueAccueil.php",
+      "source_location": "1",
+      "weight": 1.0,
+      "source": "vues_vueaccueil_accueil_view",
+      "target": "vues_header_header"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "application/vues/vuePhotosParAuteur.php",
+      "source_location": null,
+      "weight": 0.85,
+      "source": "vues_vuephotosparauteur_chartview",
+      "target": "vues_vueaccueil_accueil_view"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "application/vues/vuePostPhoto.php",
+      "source_location": "1",
+      "weight": 1.0,
+      "source": "vues_vuepostphoto_postphoto_view",
+      "target": "vues_header_header"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.65,
+      "source_file": "application/modeles/rating.php",
+      "source_location": null,
+      "weight": 0.65,
+      "source": "concept_author_selfvote_restriction",
+      "target": "concept_onduplicate_upsert"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/media/images/hugo-chat_roux.jpg",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "images_hugo_chat_roux_photo",
+      "target": "images_hugo_chat_roux_subject"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "public/media/images/hugo-chat_roux.jpg",
+      "source_location": null,
+      "weight": 0.9,
+      "source": "images_hugo_chat_roux_subject",
+      "target": "images_hugo_chat_roux_setting"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/media/images/hugo-chat_roux.jpg",
+      "source_location": null,
+      "weight": 0.8,
+      "source": "images_hugo_chat_roux_photo",
+      "target": "images_hugo_chat_roux_setting"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/media/images/jacques-anniversaire.jpg",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "images_jacques_anniversaire_subject",
+      "target": "images_jacques_anniversaire_theme"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "public/media/images/jacques-anniversaire.jpg",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "images_jacques_anniversaire_user",
+      "target": "images_jacques_anniversaire_subject"
     }
   ],
   "hyperedges": [
     {
-      "id": "mvc_request_flow_accueil",
-      "label": "Home Page MVC Request Flow",
+      "id": "bigpic_overlay_pattern",
+      "label": "Shared Lightbox Overlay DOM+JS Pattern across Views",
       "nodes": [
-        "controleurs_accueil",
-        "modeles_photos",
-        "modeles_rating",
-        "vues_vueaccueil"
+        "js_bigpic_bigpic_overlay",
+        "vues_vuepodium_podium_view",
+        "vues_vueaccueil_accueil_view"
       ],
-      "relation": "participate_in",
+      "relation": "implement",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "CLAUDE.md"
+      "source_file": "public/js/bigPic.js"
     },
     {
-      "id": "rating_submission_flow",
-      "label": "Rating Submission Flow (View \u2192 Controller \u2192 Model \u2192 DB)",
+      "id": "rating_model_functions_group",
+      "label": "Rating Model Functions (importRating, selectUserRating, selectAllRatings, top3photos)",
       "nodes": [
-        "vues_vueaccueil",
-        "controleurs_note",
         "modeles_rating_importrating",
-        "db_table_votes"
+        "modeles_rating_selectuserrating",
+        "modeles_rating_selectallratings",
+        "modeles_rating_top3photos"
       ],
       "relation": "participate_in",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "application/controleurs/note.php"
+      "source_file": "application/modeles/rating.php"
     },
     {
-      "id": "chart_data_flow",
-      "label": "Photos-per-Author Chart Data Pipeline",
+      "id": "podium_flow",
+      "label": "Podium Feature Flow: Controller \u2192 Model \u2192 View",
       "nodes": [
-        "controleurs_photosparauteur",
-        "controleurs_photosparauteur_getphotosparauteur",
-        "vues_vuephotosparauteur",
-        "concept_chartjs_cdn"
+        "controleurs_podium_podium_controller",
+        "modeles_rating_top3photos",
+        "vues_vuepodium_podium_view"
       ],
       "relation": "participate_in",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "application/controleurs/photosParAuteur.php"
+      "source_file": "application/controleurs/podium.php"
     }
   ],
-  "built_at_commit": "9674d2f96fa612f8e159c70ee52002051a554f4e"
+  "built_at_commit": "02e5eea714d8ecaf512cf68863526c653b0738f0"
 }

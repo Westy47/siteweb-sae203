@@ -18,7 +18,7 @@
         <?php if (isset($_SESSION["pseudo"])) { ?>
             <a href="accueil.php">Accueil</a>
             <a href="podium.php">Podium</a>
-            <a href="postPhoto.php">Poster un photo</a>
+            <a href="postPhoto.php">Poster une photo</a>
             <span class="user-info">Connecté en tant que <?= htmlspecialchars(
                 $_SESSION["pseudo"],
                 ENT_QUOTES,

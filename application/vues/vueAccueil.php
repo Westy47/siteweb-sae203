@@ -64,7 +64,8 @@
     : "" ?>>
                     <label for="star1-<?= $i ?>" title="1 étoile">★</label>
                 </div>
-                <button type="submit" class="rating-submit">Valider</button>
+                <button type="submit" class="rating-submit" value="insert">Valider</button>
+                <!-- <button type="submit" class="rating-submit" value="delete">Clear</button> -->
             </form>
             <?php if ($r): ?>
             <!-- <p>Votre note précedente était: <?= $r ?>🌟 </p> -->
