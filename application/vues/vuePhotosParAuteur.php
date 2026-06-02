@@ -42,6 +42,15 @@
                     data: values,
                 }]
             },
+            options: {
+                scales: {
+                    y: {
+                        ticks: {
+                            stepSize: 1
+                        }
+                    }
+                }
+            }
         });
     </script>
 </body>

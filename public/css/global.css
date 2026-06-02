@@ -1,5 +1,10 @@
-body { margin: 0;}
-header {width: 100vw;}
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+header {
+  width: 100vw;
+}
 
 #parent {
   display: none;
@@ -38,7 +43,7 @@ header {width: 100vw;}
   z-index: 11;
 }
 
-.page img {
+img {
   cursor: pointer;
 }
 

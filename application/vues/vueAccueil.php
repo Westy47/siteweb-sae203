@@ -10,11 +10,10 @@
 <?php foreach ($listePhotos as $key => $src):
 
     $i = $src["id"];
-    $r = $userRatings[$src["id"]] ?? null;
-
+    $r = $userRatings[$src["id"]];
     // on récupère la moyenne de chaque image
     $m = selectAllRatings($src["id"]);
-    $m = $m["moyenne"];
+    $m = round($m["moyenne"], 1);
 
     // On récupère juste la valeur
 
@@ -22,7 +21,9 @@
     ?>
       <div class="carte">
       <div class="cadre">
-        <img src="../../<?= $src["file_path"] ?>" alt="">
+        <img src="../../<?= $src["file_path"] ?>" alt="<?= $src[
+    "description"
+] ?>">
       </div>
         <div class="legend">
             
@@ -70,8 +71,11 @@
             <p>La note moyenne de cette image est: <?= $m ?>🌟</p>
             <?php endif; ?> 
 
-                <?php } else { ?> 
+                <?php } elseif ($_SESSION["pseudo"]) { ?> 
+                <p>La note moyenne de cette image est: <?= $m ?>🌟</p>
+              <?php } else { ?>
                 <p><a href="./connexion.php">Connectez-vous</a>pour accéder aux notes</p>
+
               <?php } ?>
         </div>
       </div>

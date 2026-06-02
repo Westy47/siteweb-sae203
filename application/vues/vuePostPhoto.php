@@ -32,7 +32,7 @@
 <script>
 document.querySelector('form').addEventListener('submit', function (e) {
     this.classList.remove('was-validated');
-    void this.offsetWidth; // force reflow pour réinitialiser l'animation
+    void this.offsetWidth; // force reflow pour reset anim
     this.classList.add('was-validated');
     if (!this.checkValidity()) {
         e.preventDefault();

@@ -46,3 +46,27 @@ function selectAllRatings($id)
     // Retourner les résultats
     return $results;
 }
+
+function top3photos()
+{
+    // Connexion à la base de données
+    $dbh = connect(); // avant la fonction, il faut avoir fait un require pour pouvoir utiliser la fonction connect
+
+    // Requête SQL pour obtenir les photos, triées par date
+    $sql = "SELECT p.id, p.title, p.file_path, COUNT(v.user_id) AS nb_votes, AVG(grade) AS moyenne 
+            FROM photos p
+            JOIN votes v ON p.id=v.photo_id
+            GROUP BY p.id
+            ORDER BY moyenne DESC
+            LIMIT 3";
+
+    // Préparation et exécution de la requête
+    $sth = $dbh->prepare($sql);
+    $sth->execute();
+
+    // Récupération des résultats sous forme de tableau associatif
+    $results = $sth->fetchAll(PDO::FETCH_ASSOC);
+
+    // Retourner les résultats
+    return $results;
+}

@@ -1,7 +1,7 @@
 const bigPic = document.getElementById("bigPic");
 const bigPicParent = document.getElementById("parent");
 
-const images = document.querySelectorAll(".page img");
+const images = document.querySelectorAll("img");
 console.log(images);
 
 images.forEach((img) => {

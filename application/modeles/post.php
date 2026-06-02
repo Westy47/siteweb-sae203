@@ -2,7 +2,7 @@
 function importPhoto($description, $date, $titre, $nomTemporaire, $author_id)
 {
     $dbh = connect();
-    $titre_compact = str_replace(" ", "_", $titre);
+    $titre_compact = $_SESSION["pseudo"] . "-" . str_replace(" ", "_", $titre);
     $chemin = "public/media/images/" . $titre_compact . ".jpg";
     move_uploaded_file($nomTemporaire, "../../" . $chemin);
     $sql = "INSERT INTO photos (author_id, description, file_path, upload_date, title)
