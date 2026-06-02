@@ -10,7 +10,7 @@
 <?php foreach ($listePhotos as $key => $src):
 
     $i = $src["id"];
-    $r = $userRatings[$src["id"]];
+    $r = $userRatings[$src["id"]] ?? null;
     // on récupère la moyenne de chaque image
     $m = selectAllRatings($src["id"]);
     $m = round($m["moyenne"], 1);
@@ -72,7 +72,7 @@
             <p>La note moyenne de cette image est: <?= $m ?>🌟</p>
             <?php endif; ?> 
 
-                <?php } elseif ($_SESSION["pseudo"]) { ?> 
+                <?php } elseif (isset($_SESSION["pseudo"])) { ?> 
                 <p>La note moyenne de cette image est: <?= $m ?>🌟</p>
               <?php } else { ?>
                 <p><a href="./connexion.php">Connectez-vous</a>pour accéder aux notes</p>

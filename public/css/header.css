@@ -1,3 +1,7 @@
+#burger{
+    display: none;
+}
+
 h1 {
     font-size: 40px;
     font-weight: 700;
@@ -9,7 +13,7 @@ h1 {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-#menu {
+.menu {
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -41,7 +45,7 @@ header {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-#menu .user-info {
+.menu .user-info {
     display: inline-block;
     padding: 10px 15px;
     border-radius: 5px;
@@ -55,7 +59,20 @@ header {
     opacity: 0.5;
 }
 
-#menu .warning-button:hover {
+.menu .warning-button:hover {
     background-color: rgb(255, 78, 78);
     color: #fff;
+}
+
+@media (max-width: 600px) {
+    #nav{
+        display: none;
+        flex-direction: column;
+    }
+    #burger {
+        display: flex;
+    }
+    #burger svg{
+        cursor: pointer;
+    }
 }

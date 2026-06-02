@@ -105,7 +105,7 @@ textarea {
   user-select: none;
 }
 .file-custom:after {
-  content: "Choose file...";
+  content: attr(data-content);
 }
 .file-custom:before {
   position: absolute;

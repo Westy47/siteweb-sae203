@@ -7,6 +7,9 @@
     .or     { border-color: gold; }
     .argent { border-color: silver; }
     .bronze { border-color: #cd7f32; }
+    @media (max-width: 600px) {
+        .podium {flex-direction: column; align-items: center}
+        }
 </style>
 
 <h2 style="text-align:center">Podium</h2>

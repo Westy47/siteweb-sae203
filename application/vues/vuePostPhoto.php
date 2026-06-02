@@ -21,7 +21,7 @@
 
         <label class="file">
             <input type="file" id="file" aria-label="File browser example" name="img" required accept="image/png, image/jpeg">
-            <span class="file-custom"></span>
+            <span class="file-custom" data-content="Choose file..."></span>
         </label>
 
         <button type="submit">Envoyer</button>
@@ -30,6 +30,10 @@
     </div>
 </body>
 <script>
+document.getElementById('file').addEventListener('change', function () {
+    this.nextElementSibling.dataset.content = this.files[0] ? this.files[0].name : 'Choose file...';
+});
+
 document.querySelector('form').addEventListener('submit', function (e) {
     this.classList.remove('was-validated');
     void this.offsetWidth; // force reflow pour reset anim
