@@ -1,19 +1,20 @@
-
-
 <?php
 session_start();
 
 require "../modeles/photos.php";
 require "../modeles/rating.php";
 
-// on récupère auprès du modèle les photos récemment ajoutées
+// Photos récemment ajoutées
 $listePhotos = obtenirPhotos();
-// on récupère les précedentes notes de cet user
-if (isset($_SESSION['pseudo'])){
+
+// Notes précédentes de l'utilisateur connecté
+if (isset($_SESSION["pseudo"])) {
     $userRatings = selectUserRating();
 }
 
+// Données du graphique « photos par auteur »
+$data = getPhotosParAuteur();
+$labels = array_column($data, "alias");
+$values = array_column($data, "nb_photos");
+
 require "../vues/vueAccueil.php";
-
-
-?>

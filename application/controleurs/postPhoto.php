@@ -1,8 +1,7 @@
 <?php
-error_reporting(E_ALL);
-ini_set("display_errors", 1);
 session_start();
-require "../modeles/connect.php";
+
+require_once "../modeles/connect.php";
 require "../modeles/post.php";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -13,13 +12,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $author_id = $user["id"];
 
     $date = date("Y-m-d H:i:s");
-    importPhoto(
-        $_POST["desc"],
-        $date,
-        $_POST["titre"],
-        $_FILES["img"]["tmp_name"],
-        $author_id,
-    );
+
+    // Construction du nom de fichier et déplacement de l'upload (logique de contrôleur)
+    $titreCompact =
+        $_SESSION["pseudo"] . "-" . str_replace(" ", "_", $_POST["titre"]);
+    $chemin = "public/media/images/" . $titreCompact . ".jpg";
+    move_uploaded_file($_FILES["img"]["tmp_name"], "../../" . $chemin);
+
+    importPhoto($_POST["desc"], $date, $_POST["titre"], $chemin, $author_id);
 
     header("Location: ../../");
     exit();

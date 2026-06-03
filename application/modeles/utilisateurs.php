@@ -1,8 +1,9 @@
 <?php
-// Connextion à la BDD + verif de mdp
+require_once "connect.php";
+
+// Connexion à la BDD + verif de mdp
 function connexionOk($pseudo, $pw)
 {
-    require "connect.php";
     $dbh = connect();
 
     $sql = "SELECT * FROM users WHERE alias=:pseudo";
@@ -25,7 +26,7 @@ function getCom()
     $sth->execute();
     $results = $sth->fetchAll(PDO::FETCH_ASSOC);
 
-    return ['communes' => $results, 'total' => count($results)];
+    return ["communes" => $results, "total" => count($results)];
 }
 
 function addUser($login, $email, $pwd, $com)

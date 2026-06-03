@@ -1,4 +1,3 @@
-<!--  A faire -->
 <?php
 session_start();
 // On vérifie si des données ont déjà étés envoyées
@@ -26,4 +25,3 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 }
 
 require "../vues/vueConnexion.php";
-

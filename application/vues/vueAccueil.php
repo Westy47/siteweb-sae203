@@ -1,5 +1,4 @@
 <?php require "header.php"; ?>
-<!-- A compléter ici -->
 
 <link rel="stylesheet" href="../../public/css/global.css">
 <link rel="stylesheet" href="../../public/css/accueil.css">
@@ -14,10 +13,6 @@
     // on récupère la moyenne de chaque image
     $m = selectAllRatings($src["id"]);
     $m = round($m["moyenne"], 1);
-
-    // On récupère juste la valeur
-
-    // var_dump($m);
     ?>
       <div class="carte">
       <div class="cadre">
@@ -65,10 +60,8 @@
                     <label for="star1-<?= $i ?>" title="1 étoile">★</label>
                 </div>
                 <button type="submit" class="rating-submit" value="insert">Valider</button>
-                <!-- <button type="submit" class="rating-submit" value="delete">Clear</button> -->
             </form>
             <?php if ($r): ?>
-            <!-- <p>Votre note précedente était: <?= $r ?>🌟 </p> -->
             <p>La note moyenne de cette image est: <?= $m ?>🌟</p>
             <?php endif; ?> 
 
@@ -87,7 +80,7 @@ endforeach; ?>
       <button class="close-btn"></button>
       <img src="https://placehold.co/600x400" alt="placeholder" id="bigPic">
 </div>
-<?php require "../controleurs/photosParAuteur.php"; ?>
+<?php require "vuePhotosParAuteur.php"; ?>
 <?php require "footer.php"; ?>
 
 <script src="../../public/js/bigPic.js"></script>

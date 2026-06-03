@@ -1,4 +1,5 @@
 <?php
+require_once "connect.php";
 
 function importRating($photoId, $userId, $grade)
 {
@@ -14,18 +15,17 @@ function importRating($photoId, $userId, $grade)
         ":grade" => $grade,
     ]);
 }
+
 function deleteRating($photoId, $userId)
 {
     $dbh = connect();
-    $sql = "INSERT INTO votes (photo_id, user_id, grade)
-            VALUES (:photo_id, :user_id, :grade)
-            ON DUPLICATE KEY UPDATE grade = VALUES(grade);";
+    $sql =
+        "DELETE FROM votes WHERE photo_id = :photo_id AND user_id = :user_id";
 
     $sth = $dbh->prepare($sql);
     $sth->execute([
         ":photo_id" => $photoId,
         ":user_id" => $userId,
-        ":grade" => $grade,
     ]);
 }
 
@@ -42,45 +42,26 @@ function selectUserRating()
     }
     return $keyed;
 }
+
 function selectAllRatings($id)
 {
-    // Connexion à la base de données
-    $dbh = connect(); // avant la fonction, il faut avoir fait un require pour pouvoir utiliser la fonction connect
-
-    // Requête SQL pour obtenir les photos, triées par date
+    $dbh = connect();
     $sql = "SELECT moyenne FROM photos WHERE id=:photo_id";
-
-    // Préparation et exécution de la requête
     $sth = $dbh->prepare($sql);
     $sth->execute([":photo_id" => $id]);
-
-    // Récupération des résultats sous forme de tableau associatif
-    $results = $sth->fetch(PDO::FETCH_ASSOC);
-
-    // Retourner les résultats
-    return $results;
+    return $sth->fetch(PDO::FETCH_ASSOC);
 }
 
 function top3photos()
 {
-    // Connexion à la base de données
-    $dbh = connect(); // avant la fonction, il faut avoir fait un require pour pouvoir utiliser la fonction connect
-
-    // Requête SQL pour obtenir les photos, triées par date
-    $sql = "SELECT p.id, p.title, p.file_path, COUNT(v.user_id) AS nb_votes, AVG(grade) AS moyenne 
+    $dbh = connect();
+    $sql = "SELECT p.id, p.title, p.file_path, COUNT(v.user_id) AS nb_votes, AVG(grade) AS moyenne
             FROM photos p
             JOIN votes v ON p.id=v.photo_id
             GROUP BY p.id
             ORDER BY moyenne DESC
             LIMIT 3";
-
-    // Préparation et exécution de la requête
     $sth = $dbh->prepare($sql);
     $sth->execute();
-
-    // Récupération des résultats sous forme de tableau associatif
-    $results = $sth->fetchAll(PDO::FETCH_ASSOC);
-
-    // Retourner les résultats
-    return $results;
+    return $sth->fetchAll(PDO::FETCH_ASSOC);
 }
